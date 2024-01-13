@@ -18,7 +18,7 @@ https://resume.setodeve.tech/
   <td>HTML</td>
 </tr>
 <tr>
-  <td>フレームワーク : Tailwind</td>
+  <td>フレームワーク : Tailwind CSS</td>
 </tr>
 <tr>
   <td rowspan=3>インフラ</td>
