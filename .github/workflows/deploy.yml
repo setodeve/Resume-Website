@@ -17,7 +17,6 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           port: ${{secrets.SSH_PORT}}
           script: |
-            ls
-            cd /var/www/Resume-Website
-            ls
-            git pull origin main     
+            cd /var/www/Resume-Website 
+            git fetch origin main
+            git reset --hard origin/main 
