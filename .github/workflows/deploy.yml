@@ -20,4 +20,4 @@ jobs:
             ls
             cd /var/www/Resume-Website
             ls
-            git pull origin main     
+            sudo git pull origin main     
