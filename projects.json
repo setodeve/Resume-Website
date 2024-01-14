@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "title": "Clicker-Empire-Game",
+    "summary": "クッキークリッカーのようなインクリメンタルゲームです。",
+    "source": "https://github.com/setodeve/Clicker-Empire-Game",
+    "thumbnail": ["https://github.com/setodeve/Clicker-Empire-Game/assets/83833293/b9f20009-b5bf-4250-8562-ae2812ac2329"],
+    "badge":[
+      "https://img.shields.io/badge/-HTML5-333.svg?logo=html5&style=flat",
+      "https://img.shields.io/badge/-CSS3-333.svg?logo=css3&style=flat",
+      "https://img.shields.io/badge/Javascript-333.svg?logo=javascript&style=flat"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "TicTacToe",
+    "summary": "○×ゲームです。",
+    "source": "https://github.com/2023-11-beginner-teamdev-a/TicTacToe",
+    "thumbnail": ["https://github.com/setodeve/Online-Chat-Messenger/assets/83833293/27efd21b-5c5b-4264-94fd-95806c7a1876"],
+    "badge":[
+      "https://img.shields.io/badge/-HTML5-333.svg?logo=html5&style=flat",
+      "https://img.shields.io/badge/-CSS3-333.svg?logo=css3&style=flat",
+      "https://img.shields.io/badge/Javascript-333.svg?logo=javascript&style=flat"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Online-Chat-Messenger",
+    "summary": "ターミナル上で動作する簡易ネットワークチャットアプリケーションです。",
+    "source": "https://github.com/setodeve/Online-Chat-Messenger",
+    "thumbnail": ["https://github.com/setodeve/Online-Chat-Messenger/assets/83833293/627e44f9-b6d5-4492-a15a-09e5d846d5c4"],
+    "thumbnail-width" :"600",
+    "badge":[
+      "https://img.shields.io/badge/-Python3-333.svg?logo=python&style=flat"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Video-Compressor-Service",
+    "summary": "ターミナル上で動作する動画処理サービスです。",
+    "source": "https://github.com/setodeve/Video-Compressor-Service",
+    "thumbnail": ["https://github.com/setodeve/Video-Compressor-Service/assets/83833293/5d518b46-2982-4412-adf7-07522b4f6449"],
+    "thumbnail-width" :"1000",
+    "badge":[
+      "https://img.shields.io/badge/-Python3-333.svg?logo=python&style=flat",
+      "https://img.shields.io/badge/-FFmpeg-333.svg?logo=ffmpeg&style=flat"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Resume-Website",
+    "summary": "VPSを借りてに独自ドメイン、SSL設定をしたレジュメサイトです。 \n Github Actionsによって自動デプロイできるように設定しました。",
+    "source": "https://github.com/setodeve/Resume-Website",
+    "thumbnail": [
+      "https://github.com/setodeve/Video-Compressor-Service/assets/83833293/402d6902-1980-430f-a410-74bf2f67eb4b"
+    ],
+    "badge":[
+      "https://img.shields.io/badge/-HTML5-333.svg?logo=html5&style=flat",
+      "https://img.shields.io/badge/-TailwindCSS-333.svg?logo=tailwindcss&style=flat",
+      "https://img.shields.io/badge/-NGINX-333.svg?logo=nginx&style=flat",
+      "https://img.shields.io/badge/-GithubActions-333.svg?logo=githubactions&style=flat"
+    ]
+  }
+]
