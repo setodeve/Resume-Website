@@ -8,7 +8,8 @@
     "badge":[
       "https://img.shields.io/badge/-HTML5-333.svg?logo=html5&style=flat",
       "https://img.shields.io/badge/-CSS3-333.svg?logo=css3&style=flat",
-      "https://img.shields.io/badge/Javascript-333.svg?logo=javascript&style=flat"
+      "https://img.shields.io/badge/Javascript-333.svg?logo=javascript&style=flat",
+      "https://img.shields.io/badge/personal_dev-yellow"
     ]
   },
   {
@@ -20,7 +21,8 @@
     "badge":[
       "https://img.shields.io/badge/-HTML5-333.svg?logo=html5&style=flat",
       "https://img.shields.io/badge/-CSS3-333.svg?logo=css3&style=flat",
-      "https://img.shields.io/badge/Javascript-333.svg?logo=javascript&style=flat"
+      "https://img.shields.io/badge/Javascript-333.svg?logo=javascript&style=flat",
+      "https://img.shields.io/badge/team_dev-green"
     ]
   },
   {
@@ -31,7 +33,8 @@
     "thumbnail": ["https://github.com/setodeve/Online-Chat-Messenger/assets/83833293/627e44f9-b6d5-4492-a15a-09e5d846d5c4"],
     "thumbnail-width" :"600",
     "badge":[
-      "https://img.shields.io/badge/-Python3-333.svg?logo=python&style=flat"
+      "https://img.shields.io/badge/-Python3-333.svg?logo=python&style=flat",
+      "https://img.shields.io/badge/personal_dev-yellow"
     ]
   },
   {
@@ -43,7 +46,8 @@
     "thumbnail-width" :"1000",
     "badge":[
       "https://img.shields.io/badge/-Python3-333.svg?logo=python&style=flat",
-      "https://img.shields.io/badge/-FFmpeg-333.svg?logo=ffmpeg&style=flat"
+      "https://img.shields.io/badge/-FFmpeg-333.svg?logo=ffmpeg&style=flat",
+      "https://img.shields.io/badge/personal_dev-yellow"
     ]
   },
   {
@@ -58,7 +62,8 @@
       "https://img.shields.io/badge/-HTML5-333.svg?logo=html5&style=flat",
       "https://img.shields.io/badge/-TailwindCSS-333.svg?logo=tailwindcss&style=flat",
       "https://img.shields.io/badge/-NGINX-333.svg?logo=nginx&style=flat",
-      "https://img.shields.io/badge/-GithubActions-333.svg?logo=githubactions&style=flat"
+      "https://img.shields.io/badge/-GithubActions-333.svg?logo=githubactions&style=flat",
+      "https://img.shields.io/badge/personal_dev-yellow"
     ]
   }
 ]
