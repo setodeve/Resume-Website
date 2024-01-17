@@ -41,15 +41,7 @@ https://resume.setodeve.tech/
 </table>
 
 ## デモ
-
-- ホワイトモード
-
 <img width=50% src="https://github.com/setodeve/Video-Compressor-Service/assets/83833293/064297a6-e566-4cbc-b464-315dde554567" alt="">
-
-- ダークモード
-
-<img width=50% src="https://github.com/setodeve/Video-Compressor-Service/assets/83833293/402d6902-1980-430f-a410-74bf2f67eb4b" alt="">
-
 
 ## TailWind CSSビルド方法
 ```bash
