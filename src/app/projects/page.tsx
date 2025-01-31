@@ -9,6 +9,8 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from '../../components/Header';
 import Link  from 'next/link';
+import nextConfig from '../../../next.config';
+const BASE_PATH = nextConfig.basePath || "";
 
 config.autoAddCss = false;
 
@@ -25,7 +27,7 @@ export default function Projects() {
 
   useEffect(() => {
     async function fetchProjects() {
-      const response = await fetch('/projects.json');
+      const response = await fetch(`${BASE_PATH}/projects.json`);
       const data = await response.json();
       setProjects(data);
     }

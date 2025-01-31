@@ -1,4 +1,6 @@
-const config = {
+import type { NextConfig } from "next"
+
+const nextConfig: NextConfig = {
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
@@ -15,7 +17,7 @@ const config = {
     ],
     unoptimized: true
   },
-  output : "export",
+  output : "export"
 };
 
-export default config;
+export default nextConfig;
