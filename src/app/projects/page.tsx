@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -53,13 +54,33 @@ export default function Projects() {
                         <h3 className="text-lg font-bold">{project.title}</h3>
                       </header>
                       <div className="mt-2 dark:text-gray-300">{project.summary}</div>
-                      <footer className="my-4 flex flex-wrap gap-1">
+                      <div className="my-4 flex flex-wrap gap-1">
                         {project.badge.map((b, i) => (
-                          <img key={i} src={b} alt={`Badge ${i}`} />
+                          <Image 
+                            key={i} 
+                            src={b} 
+                            alt={`Badge ${i}`}
+                            width={0} 
+                            height={0}
+                            // width, heightを0に設定して、スタイリングでサイズを調整する
+                            style={{
+                              width: '15%',
+                              height: 'auto',
+                            }}
+                            priority={true}
+                          />
                         ))}
-                      </footer>
+                      </div>
                       {project.thumbnail.map((t, i) => (
-                        <img key={i} className="mx-auto" src={t} alt={`Thumbnail ${i}`} />
+                        <Image 
+                          key={i}
+                          className="mx-auto"
+                          src={t} 
+                          alt={`Thumbnail ${i}`} 
+                          width={500} 
+                          height={300}
+                          priority={true}
+                        />
                       ))}
                     </a>
                   </section>
