@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding } from '@fortawesome/free-solid-svg-icons';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import Header from '../../components/Header';
 import Link from 'next/link'
 
 config.autoAddCss = false;
@@ -18,9 +17,8 @@ export default function About() {
       </Head>
       <div className="dark font-sans">
         <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 text-gray-500 dark:text-gray-300">
-          <Header />
           <main className="mx-auto max-w-3xl p-4 selection:bg-black text-gray-500 dark:text-gray-300">
-            <section className="mt-12 text-gray-500 dark:text-gray-300">
+            <section className=" text-gray-500 dark:text-gray-300">
               <h2 className="text-3xl font-bold">
                 <FontAwesomeIcon icon={faBuilding} className="mr-2" />
                 職務経歴
