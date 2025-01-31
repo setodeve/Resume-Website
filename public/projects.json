@@ -70,7 +70,7 @@
   {
     "id": 6,
     "title": "Markdown-to-HTML",
-    "summary": "MarkdownテキストをHTMLに変換するアプリケーションです。",
+    "summary": "MarkdownテキストをHTMLに変換するアプリです。",
     "source": "https://github.com/setodeve/Markdown-to-HTML",
     "thumbnail": ["https://github.com/setodeve/Markdown-to-HTML/assets/83833293/4186852c-1cf8-4447-a14e-1446532de235"],
     "badge":[
