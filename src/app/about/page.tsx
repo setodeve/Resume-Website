@@ -6,6 +6,7 @@ import { faBuilding } from '@fortawesome/free-solid-svg-icons';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from '../../components/Header';
+import Link from 'next/link'
 
 config.autoAddCss = false;
 
@@ -90,7 +91,7 @@ export default function About() {
                   </div>
                   <br />
                   <div>
-                    <a href="https://github.com/yamada-ui/yamada-ui" target="_blank" className="text-blue-600">https://github.com/yamada-ui/yamada-ui</a>
+                    <Link href="https://github.com/yamada-ui/yamada-ui" target="_blank" className="text-blue-600">https://github.com/yamada-ui/yamada-ui</Link>
                   </div>
                 </div>
               </div>

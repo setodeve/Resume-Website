@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import Header from '../components/Header';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -19,10 +20,10 @@ export default function Home() {
               <p>このサイトでは、私の職務経歴とプロジェクトを紹介しています。</p>
               <p>詳細は、上部のリンクから各ページをご覧ください。</p>
               <div className="mt-4">
-                <a href="/about" className="text-blue-600 hover:underline">職務経歴を見る</a>
+                <Link href="/about" className="text-blue-600 hover:underline">職務経歴を見る</Link>
               </div>
               <div className="mt-2">
-                <a href="/projects" className="text-blue-600 hover:underline">プロジェクトを見る</a>
+                <Link href="/projects" className="text-blue-600 hover:underline">プロジェクトを見る</Link>
               </div>
             </section>
           </main>
