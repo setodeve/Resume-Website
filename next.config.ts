@@ -13,8 +13,9 @@ const config = {
         pathname: '/**',
       },
     ],
+    unoptimized: true
   },
-  output : "export"
+  output : "export",
 };
 
 export default config;
