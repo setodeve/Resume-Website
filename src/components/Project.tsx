@@ -65,7 +65,7 @@ export default function Projects() {
                             height={0}
                             // width, heightを0に設定して、スタイリングでサイズを調整する
                             style={{
-                              width: '15%',
+                              width: '20%',
                               height: 'auto',
                             }}
                             priority={true}
