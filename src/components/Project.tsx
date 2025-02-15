@@ -49,7 +49,7 @@ export default function Projects() {
               <hr className="h-px mt-2 mb-5 bg-yellow-400 border-0" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
-                  <section key={index} className="card cursor-pointer rounded my-2 p-5 shadow-sm shadow-black/30 transition hover:-translate-y-2 hover:shadow-md hover:shadow-black/50 dark:bg-neutral-800">
+                  <section key={index} className="card cursor-pointer rounded-sm my-2 p-5 shadow-xs shadow-black/30 transition hover:-translate-y-2 hover:shadow-md hover:shadow-black/50 dark:bg-neutral-800">
                     <Link href={project.source}>
                       <header className="flex items-center justify-between">
                         <h3 className="text-lg font-bold">{project.title}</h3>
