@@ -77,5 +77,18 @@
       "https://img.shields.io/badge/-HTML5-333.svg?logo=html5&style=flat",
       "https://img.shields.io/badge/personal_dev-yellow"
     ]
+  },
+  {
+    "id": 7,
+    "title": "CatalogEasy",
+    "summary": "商品カタログを簡単に管理できるウェブアプリケーションです。",
+    "source": "https://github.com/setodeve/CatalogEasy",
+    "thumbnail": ["https://raw.githubusercontent.com/setodeve/CatalogEasy/refs/heads/main/documents/design/top.png"],
+    "badge":[
+      "https://img.shields.io/badge/-Next.js-333.svg?logo=nextdotjs&style=flat",
+      "https://img.shields.io/badge/-TypeScript-333.svg?logo=typescript&style=flat",
+      "https://img.shields.io/badge/-RubyOnRails-333.svg?logo=rubyonrails&style=flat",
+      "https://img.shields.io/badge/personal_dev-yellow"
+    ]
   }
 ]
