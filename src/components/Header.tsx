@@ -1,15 +1,16 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
+
 export default function Header() {
-  const cats = ['🐱','😺', '🙀', '😼'];
+  const cats = useMemo(() => ['🐱','😺', '🙀', '😼'], []);
   const [cat, setCat] = useState(cats[0]);
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * cats.length);
     setCat(cats[randomIndex]);
-  }, []);
+  }, [cats]);
 
   return (
     <header className="inset-x-0 bg-neutral-300 dark:bg-neutral-900 sm:relative">
