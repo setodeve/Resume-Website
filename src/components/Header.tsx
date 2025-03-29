@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Cat from './Cat';
 
 export default function Header() {
   const cats = useMemo(() => ['🐱', '😺', '🙀', '😼'], []);
@@ -19,19 +19,7 @@ export default function Header() {
         <div className="flex items-center font-bold justify-end">
           <Link className="mx-2" href="https://github.com/setodeve" target="_blank" aria-label="GitHub">Github</Link>
           <Link className="mx-2" href="https://qiita.com/keiswe" target="_blank" aria-label="Qiita">Qiita</Link>
-          <motion.span
-            className="inline-block"
-            animate={{
-              y: [0, -5, 0],
-            }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              repeat: Infinity,
-            }}
-          >
-            {cat}
-          </motion.span>
+          <Cat cat={cat} />
         </div>
       </div>
     </header>
