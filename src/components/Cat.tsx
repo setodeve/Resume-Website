@@ -12,7 +12,7 @@ export default function Cat({ cat }: CatProps) {
   return (
     <div className="relative">
       <motion.span
-        className="inline-block cursor-pointer"
+        className="inline-block cursor-pointer rotate-10"
         animate={{
           y: [0, -5, 0],
         }}
