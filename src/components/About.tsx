@@ -24,7 +24,6 @@ export default function About() {
                 職務経歴
               </h2>
               <hr className="h-px mt-2 mb-5 bg-yellow-400 border-0" />
-              
               <div className="card rounded-sm my-2 p-5 shadow-xs shadow-black/30 dark:bg-neutral-800">
                 <div className="flex mb-1 font-bold text-lg">
                   <h3>P社 : 2024/8 - 現在</h3>
