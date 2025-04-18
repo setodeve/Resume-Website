@@ -46,7 +46,7 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-extrabold mb-6">
+          <h2 className="text-3xl font-extrabold mb-2">
             <FontAwesomeIcon icon={faFile} className="text-gray-500 dark:text-gray-300 mr-2" />
             プロジェクト
           </h2>
