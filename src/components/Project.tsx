@@ -41,37 +41,66 @@ export default function Projects() {
         <title>Projects</title>
       </Head>
       <section id="project-list">
-        <h2 className="text-3xl font-extrabold">
-          <FontAwesomeIcon icon={faFile} className="text-gray-500 dark:text-gray-300" />
-          プロジェクト
-        </h2>
-        <hr className="h-px mt-2 mb-5 bg-yellow-400 border-0" />
-        <div className="card rounded-sm my-2 p-5 shadow-xs shadow-black/30 dark:bg-neutral-800">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="card rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Link href={project.source}>
-                  <Image
-                    src={project.thumbnail[0]}
-                    alt={`${project.title} Thumbnail`}
-                    width={500}
-                    height={300}
-                    className="w-full h-48 object-cover"
-                    priority={true}
-                  />
-                  <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{project.summary}</p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl font-extrabold mb-6">
+            <FontAwesomeIcon icon={faFile} className="text-gray-500 dark:text-gray-300 mr-2" />
+            プロジェクト
+          </h2>
+          <hr className="h-px mb-8 bg-yellow-400 border-0" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="h-full"
+            >
+              <Link href={project.source} className="h-full block">
+                <motion.div
+                  className="group h-full flex flex-col relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-48">
+                    <Image
+                      src={project.thumbnail[0]}
+                      alt={`${project.title} Thumbnail`}
+                      width={500}
+                      height={300}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                      priority={true}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="flex flex-col flex-grow p-6">
+                    <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                      {project.summary}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.badge.map((badge, badgeIndex) => (
+                        <img
+                          key={badgeIndex}
+                          src={badge}
+                          alt="badge"
+                          className="h-5"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </section>
     </>
