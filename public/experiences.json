@@ -4,46 +4,57 @@
     "company": "P社",
     "period": "2024/8 - 現在",
     "position": "Webエンジニア",
-    "projectOverview": "販売促進アプリ開発",
-    "responsibilities": [
-      "DB設計",
-      "API設計",
-      "Django テンプレートを使用した管理画面設計",
-      "統合テスト、ユニットテスト作成",
-      "Swaggerを使用したドキュメント作成"
-    ],
-    "technologies": [
-      "Python, Django",
-      "HTML, Bootstrap, Vue, JavaScript",
-      "MySQL, DynamoDB, S3",
-      "Redis, Minio, Docker",
-      "Swagger"
-    ],
-    "achievements": [
-      "ユニットテストを充実させ、品質向上に貢献。",
-      "Docker環境設定の作成し、環境構築の時間を短縮。",
-      "ドキュメントを作成し、開発メンバー間のコミュニケーションを効率化。"
+    "experiences": [
+      {
+        "period": "2024/8 - 現在",
+        "projectOverview": "販売促進アプリ開発",
+        "responsibilities": [
+          "DB設計",
+          "API設計",
+          "Django テンプレートを使用した管理画面設計",
+          "統合テスト、ユニットテスト作成",
+          "Swaggerを使用したドキュメント作成"
+        ],
+        "technologies": [
+          "Python, Django",
+          "HTML, Bootstrap, Vue, JavaScript",
+          "MySQL, DynamoDB, S3",
+          "Redis, Minio, Docker",
+          "Swagger"
+        ],
+        "achievements": [
+          "ユニットテストを充実させ、品質向上に貢献。",
+          "Docker環境設定の作成し、環境構築の時間を短縮。",
+          "ドキュメントを作成し、開発メンバー間のコミュニケーションを効率化。"
+        ]
+      }
     ]
   },
   {
     "id": 2,
     "company": "Yamada UIメンテナ",
     "period": "2024/2 - 2024/9",
-    "projectOverview": "ReactベースのUIコンポーネントライブラリ「Yamada UI」のメンテナ",
-    "responsibilities": [
-      "アクセシビリティの改善",
-      "ドキュメントの整備と改善",
-      "Issue対応とレビュー参加"
-    ],
-    "technologies": [
-      "TypeScript, React",
-      "Storybook",
-      "Vitest"
-    ],
-    "achievements": [
-      "ドキュメント整備やアクセシビリティ対応による利便性向上"
-    ],
-    "link": "https://github.com/yamada-ui/yamada-ui"
+    "position": "メンテナ",
+    "experiences": [
+      {
+        "period": "2024/2 - 2024/9",
+        "projectOverview": "ReactベースのUIコンポーネントライブラリ「Yamada UI」のメンテナ",
+        "responsibilities": [
+          "アクセシビリティの改善",
+          "ドキュメントの整備と改善",
+          "Issue対応とレビュー参加"
+        ],
+        "technologies": [
+          "TypeScript, React",
+          "Storybook",
+          "Vitest"
+        ],
+        "achievements": [
+          "ドキュメント整備やアクセシビリティ対応による利便性向上"
+        ],
+        "link": "https://github.com/yamada-ui/yamada-ui"
+      }
+    ]
   },
   {
     "id": 3,
@@ -58,6 +69,8 @@
         "achievements": [
           "自主的なテスト補助ツール開発",
           "成果物のエビデンス運用方法提案による品質向上"
+        ],"technologies": [
+          "C, VBA"
         ]
       },
       {
@@ -65,9 +78,11 @@
         "projectOverview": "車載組込システム開発(車載安全系)",
         "responsibilities": "PL、顧客折衷、設計、実装、テスト",
         "achievements": [
-          "週1回の顧客ミーティング",
           "要件~テストフェーズについて顧客折衷",
           "メンバー2人に対するマネジメント"
+        ],
+        "technologies": [
+          "C"
         ]
       },
       {
@@ -78,11 +93,11 @@
           "テスト実施手順のマニュアル化",
           "VBAによるテスト補助ツール開発",
           "新入社員へのメンター"
+        ],
+        "technologies": [
+          "C"
         ]
       }
-    ],
-    "technologies": [
-      "C, VBA"
     ]
   }
 ] 
