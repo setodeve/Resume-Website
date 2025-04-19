@@ -2,7 +2,7 @@
 
 import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBuilding, faCalendar, faCode, faTrophy, faTasks } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faCalendar, faCode, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Link from 'next/link';
