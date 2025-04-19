@@ -31,7 +31,7 @@ export default function About() {
         
         <div className="space-y-8">
           <motion.div
-            className="card rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-neutral-800"
+            className="card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -77,7 +77,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="card rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-neutral-800"
+            className="card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -125,7 +125,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="card rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-neutral-800"
+            className="card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}

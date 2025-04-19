@@ -64,7 +64,7 @@ export default function Projects() {
             >
               <Link href={project.source} className="h-full block">
                 <motion.div
-                  className="group h-full flex flex-col relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800"
+                  className="group h-full flex flex-col relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >

@@ -15,7 +15,7 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <div className="dark font-sans">
-        <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 text-gray-500 dark:text-gray-300">
+        <div className="min-h-screen bg-white dark:bg-neutral-900 text-gray-700 dark:text-gray-300">
           <Header />
           <main className="mx-auto max-w-3xl p-4 selection:bg-black text-gray-500 dark:text-gray-300">
             <div className="space-y-16">
