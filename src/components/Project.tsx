@@ -50,7 +50,7 @@ export default function Projects() {
             <FontAwesomeIcon icon={faFile} className="text-gray-500 dark:text-gray-300 mr-2" />
             プロジェクト
           </h2>
-          <hr className="h-px mb-8 bg-yellow-400 border-0" />
+          <hr className="h-px mb-5 bg-yellow-400 border-0" />
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -26,13 +26,13 @@ export default function About() {
             <FontAwesomeIcon icon={faBuilding} className="mr-2" />
             職務経歴
           </h2>
-          <hr className="h-px mb-8 bg-yellow-400 border-0" />
+          <hr className="h-px mb-5 bg-yellow-400 border-0" />
         </motion.div>
         
         <div className="space-y-8">
           <motion.div
             className="card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
@@ -78,7 +78,7 @@ export default function About() {
 
           <motion.div
             className="card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
@@ -126,7 +126,7 @@ export default function About() {
 
           <motion.div
             className="card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
