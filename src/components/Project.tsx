@@ -19,8 +19,16 @@ interface Project {
   title: string;
   summary: string;
   source: string;
-  badge: string[];
+  technologies: string[];
   thumbnail: string[];
+}
+
+function Badge({ text }: { text: string }) {
+  return (
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+      {text}
+    </span>
+  );
 }
 
 function SkeletonProjectCard() {
@@ -129,13 +137,8 @@ export default function Projects() {
                           {project.summary}
                         </p>
                         <div className="flex flex-wrap gap-2 mt-auto">
-                          {project.badge.map((badge, badgeIndex) => (
-                            <img
-                              key={badgeIndex}
-                              src={badge}
-                              alt="badge"
-                              className="h-5"
-                            />
+                          {project.technologies.map((tech, techIndex) => (
+                            <Badge key={techIndex} text={tech} />
                           ))}
                         </div>
                       </div>
