@@ -23,7 +23,7 @@ interface Experience {
     period: string;
     projectOverview: string;
     responsibilities: string[] | string;
-    technologies?: string[];
+    technologies?: { [category: string]: string[] };
     achievements: string[];
     link?: string;
   }[];
@@ -69,6 +69,21 @@ export default function About() {
     }
     fetchExperiences();
   }, []);
+
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case "バックエンド":
+        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
+      case "フロントエンド":
+        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
+      case "インフラ":
+        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
+      case "ツール":
+        return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300";
+      default:
+        return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300";
+    }
+  };
 
   return (
     <>
@@ -157,11 +172,23 @@ export default function About() {
                                 <FontAwesomeIcon icon={faCode} className="mr-2" />
                                 【使用技術】
                               </h5>
-                              <ul className="space-y-2">
-                                {exp.technologies.map((tech, i) => (
-                                  <li key={i} className="text-gray-600 dark:text-gray-300">{tech}</li>
+                              <div className="space-y-4">
+                                {Object.entries(exp.technologies).map(([category, techs], index) => (
+                                  <div key={index}>
+                                    <h6 className="text-sm font-bold text-gray-700 dark:text-gray-200 mb-1">{category}</h6>
+                                    <div className="flex flex-wrap gap-2">
+                                      {techs.map((tech, i) => (
+                                        <span
+                                          key={i}
+                                          className={`inline-block text-sm font-medium px-2.5 py-0.5 rounded ${getCategoryColor(category)}`}
+                                        >
+                                          {tech}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
                                 ))}
-                              </ul>
+                              </div>
                             </div>
                           )}
                           <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-lg">
@@ -202,4 +229,4 @@ export default function About() {
       </section>
     </>
   );
-} 
+}
