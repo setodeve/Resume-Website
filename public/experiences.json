@@ -6,7 +6,25 @@
     "position": "Webエンジニア",
     "experiences": [
       {
-        "period": "2024/8 - 現在",
+        "period": "2025/2 - 2025/4",
+        "projectOverview": "ECサイト改修開発",
+        "responsibilities": [
+          "API設計",
+          "テスト作成"
+        ],
+        "technologies": [
+          "Python, Django",
+          "HTML, JavaScript",
+          "MySQL, Docker",
+          "pytest, playwright"
+        ],
+        "achievements": [
+          "リファクタリングを見据えたテスト設計を実施。",
+          "playwrightを用いたE2Eテストで品質向上に貢献。"
+        ]
+      },
+      {
+        "period": "2024/8 - 2025/2",
         "projectOverview": "販売促進アプリ開発",
         "responsibilities": [
           "DB設計",
@@ -100,4 +118,4 @@
       }
     ]
   }
-] 
+]
