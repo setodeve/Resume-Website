@@ -90,7 +90,7 @@ export default function About() {
       <Head>
         <title>Resume</title>
       </Head>
-      <section className="text-gray-500 dark:text-gray-300">
+      <section className="text-gray-600 dark:text-gray-200">
         <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
