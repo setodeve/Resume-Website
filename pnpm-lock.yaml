@@ -22,7 +22,7 @@ importers:
         version: 0.2.2(@fortawesome/fontawesome-svg-core@6.7.2)(react@19.1.0)
       framer-motion:
         specifier: ^12.6.2
-        version: 12.9.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 12.9.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next:
         specifier: 15.3.1
         version: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -898,8 +898,8 @@ packages:
     resolution: {integrity: sha512-kKaIINnFpzW6ffJNDjjyjrk21BkDx38c0xa/klsT8VzLCaMEefv4ZTacrcVR4DmgTeBra++jMDAfS/tS799YDw==}
     engines: {node: '>= 0.4'}
 
-  framer-motion@12.9.1:
-    resolution: {integrity: sha512-dZBp2TO0a39Cc24opshlLoM0/OdTZVKzcXWuhntfwy2Qgz3t9+N4sTyUqNANyHaRFiJUWbwwsXeDvQkEBPky+g==}
+  framer-motion@12.9.2:
+    resolution: {integrity: sha512-R0O3Jdqbfwywpm45obP+8sTgafmdEcUoShQTAV+rB5pi+Y1Px/FYL5qLLRe5tPtBdN1J4jos7M+xN2VV2oEAbQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -2611,7 +2611,7 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  framer-motion@12.9.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  framer-motion@12.9.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       motion-dom: 12.9.1
       motion-utils: 12.8.3
