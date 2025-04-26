@@ -104,7 +104,7 @@ export default function About() {
         </motion.div>
         
         <div className="space-y-8">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="sync">
             {isLoading ? (
               <motion.div
                 initial={{ opacity: 0 }}
