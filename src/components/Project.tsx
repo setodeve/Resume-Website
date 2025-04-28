@@ -3,17 +3,12 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile } from '@fortawesome/free-solid-svg-icons';
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import { File } from 'lucide-react';
 import Link from 'next/link';
 import nextConfig from '../../next.config';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const BASE_PATH = nextConfig.basePath || "";
-
-config.autoAddCss = false;
 
 interface Project {
   title: string;
@@ -82,8 +77,8 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-extrabold mb-2 text-gray-600 dark:text-gray-200">
-            <FontAwesomeIcon icon={faFile} className="mr-2" />
+          <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+            <File className="mr-2" />
             プロジェクト
           </h2>
           <hr className="h-px mb-5 bg-yellow-400 border-0" />

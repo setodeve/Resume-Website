@@ -1,16 +1,11 @@
 "use client";
 
 import Head from 'next/head';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBuilding, faCalendar, faCode, faTrophy } from '@fortawesome/free-solid-svg-icons';
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Building, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import nextConfig from '../../next.config';
-
-config.autoAddCss = false;
 
 const BASE_PATH = nextConfig.basePath || "";
 
@@ -96,10 +91,10 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-2">
-            <FontAwesomeIcon icon={faBuilding} className="mr-2" />
-            職務経歴
-          </h2>
+            <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+              <Building className="mr-2" />
+              職務経歴
+            </h2>
           <hr className="h-px mb-5 bg-yellow-400 border-0" />
         </motion.div>
         
@@ -136,7 +131,7 @@ export default function About() {
                         )}
                       </div>
                       <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                        <FontAwesomeIcon icon={faCalendar} className="mr-1" />
+                        <Calendar className="mr-1" />
                         {experience.period}
                       </div>
                     </div>
@@ -146,7 +141,7 @@ export default function About() {
                     {experience.experiences.map((exp, expIndex) => (
                       <div key={expIndex} className="mt-4 space-y-6">
                         <div className="flex items-center text-gray-700 dark:text-gray-200 mb-2">
-                          <FontAwesomeIcon icon={faCalendar} className="mr-2" />
+                          <Calendar className="mr-2" />
                           <h4 className="text-lg font-semibold">{exp.period}</h4>
                         </div>
                         <div className="space-y-4">
@@ -169,7 +164,6 @@ export default function About() {
                           {exp.technologies && (
                             <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-lg">
                               <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
-                                <FontAwesomeIcon icon={faCode} className="mr-2" />
                                 【使用技術】
                               </h5>
                               <div className="space-y-4">
@@ -193,7 +187,6 @@ export default function About() {
                           )}
                           <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-lg">
                             <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
-                              <FontAwesomeIcon icon={faTrophy} className="mr-2" />
                               【実績】
                             </h5>
                             <ul className="space-y-2">
