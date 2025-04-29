@@ -85,7 +85,7 @@ export default function About() {
       <Head>
         <title>Resume</title>
       </Head>
-      <section className="text-gray-600 dark:text-gray-200">
+      <section className="text-gray-600 dark:text-gray-200 py-8">
         <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
@@ -145,11 +145,11 @@ export default function About() {
                           <h4 className="text-lg font-semibold">{exp.period}</h4>
                         </div>
                         <div className="space-y-4">
-                          <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-lg">
+                          <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
                             <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2">【プロジェクト概要】</h5>
                             <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">{exp.projectOverview}</p>
                           </div>
-                          <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-lg">
+                          <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
                             <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2">【業務内容】</h5>
                             {Array.isArray(exp.responsibilities) ? (
                               <ul className="space-y-2">
@@ -162,7 +162,7 @@ export default function About() {
                             )}
                           </div>
                           {exp.technologies && (
-                            <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-lg">
+                            <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
                               <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
                                 【使用技術】
                               </h5>
@@ -185,7 +185,7 @@ export default function About() {
                               </div>
                             </div>
                           )}
-                          <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-lg">
+                          <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
                             <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
                               【実績】
                             </h5>
