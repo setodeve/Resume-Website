@@ -77,7 +77,7 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+          <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
             <File className="mr-2" />
             プロジェクト
           </h2>

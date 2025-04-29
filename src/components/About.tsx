@@ -85,13 +85,13 @@ export default function About() {
       <Head>
         <title>Resume</title>
       </Head>
-      <section className="text-gray-600 dark:text-gray-200 py-8">
+      <section className="text-gray-200 py-8">
         <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-            <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+            <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
               <Building className="mr-2" />
               職務経歴
             </h2>
