@@ -1,14 +1,17 @@
 "use client";
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image'
 
-interface CatProps {
-  cat: string;
-}
-
-export default function Cat({ cat }: CatProps) {
+export default function Cat() {
   const [showTooltip, setShowTooltip] = useState(false);
+  const cats = useMemo(() => ['Grinning1.png','Grinning2.png','Weary.png'], []);
+  const [cat, setCat] = useState(cats[0]);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * cats.length);
+    setCat(cats[randomIndex]);
+  }, [cats]);
 
   return (
     <div className="relative">
