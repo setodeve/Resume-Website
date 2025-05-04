@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Cat from './Cat';
 
 export default function Header() {
-  const cats = useMemo(() => ['🐱', '😺', '🙀', '😼'], []);
+  const cats = useMemo(() => ['Grinning1.png','Grinning2.png','Weary.png'], []);
   const [cat, setCat] = useState(cats[0]);
 
   useEffect(() => {

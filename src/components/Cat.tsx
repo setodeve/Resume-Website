@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image'
 
 interface CatProps {
   cat: string;
@@ -24,7 +25,12 @@ export default function Cat({ cat }: CatProps) {
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       >
-        {cat}
+        <Image
+          src={cat}
+          alt="Cat"
+          width={30}
+          height={30}
+        />
       </motion.span>
       {showTooltip && (
         <motion.div
