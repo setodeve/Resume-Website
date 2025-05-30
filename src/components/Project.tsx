@@ -62,7 +62,7 @@ export default function Projects() {
           <AnimatePresence mode="sync">
             {isLoading ? (
               [...Array(6)].map((_, index) => (
-                  <SkeletonProjectCard />
+                  <SkeletonProjectCard key={index}/>
               ))
             ) : (
               projects.map((project, index) => (
