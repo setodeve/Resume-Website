@@ -1,6 +1,7 @@
 "use client";
 
 import Head from 'next/head';
+
 import Header from '../components/Header';
 import About from '../components/About';
 import Projects from '../components/Project';

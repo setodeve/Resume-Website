@@ -5,7 +5,9 @@ import { Building, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+
 import nextConfig from '../../next.config';
+
 import SkeletonProjectCard from './SkeletonProjectCard';
 
 const BASE_PATH = nextConfig.basePath || "";
@@ -47,16 +49,16 @@ export default function About() {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "バックエンド":
-        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
-      case "フロントエンド":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
-      case "インフラ":
-        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
-      case "ツール":
-        return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300";
-      default:
-        return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300";
+    case "バックエンド":
+      return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
+    case "フロントエンド":
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
+    case "インフラ":
+      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
+    case "ツール":
+      return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300";
+    default:
+      return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300";
     }
   };
 
@@ -75,7 +77,7 @@ export default function About() {
         <div className="space-y-8">
           <AnimatePresence mode="sync">
             {isLoading ? (
-                <SkeletonProjectCard />
+              <SkeletonProjectCard />
             ) : (
               experiences.map((experience) => (
                 <motion.div

@@ -5,8 +5,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { File } from 'lucide-react';
 import Link from 'next/link';
-import nextConfig from '../../next.config';
 import { motion, AnimatePresence } from 'framer-motion';
+
+import nextConfig from '../../next.config';
+
 import SkeletonProjectCard from './SkeletonProjectCard';
 
 const BASE_PATH = nextConfig.basePath || "";
@@ -62,7 +64,7 @@ export default function Projects() {
           <AnimatePresence mode="sync">
             {isLoading ? (
               [...Array(6)].map((_, index) => (
-                  <SkeletonProjectCard key={index}/>
+                <SkeletonProjectCard key={index}/>
               ))
             ) : (
               projects.map((project, index) => (
