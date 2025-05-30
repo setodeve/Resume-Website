@@ -7,6 +7,7 @@ import { File } from 'lucide-react';
 import Link from 'next/link';
 import nextConfig from '../../next.config';
 import { motion, AnimatePresence } from 'framer-motion';
+import SkeletonProjectCard from './SkeletonProjectCard';
 
 const BASE_PATH = nextConfig.basePath || "";
 
@@ -23,27 +24,6 @@ function Badge({ text }: { text: string }) {
     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
       {text}
     </span>
-  );
-}
-
-function SkeletonProjectCard() {
-  return (
-    <div className="h-full">
-      <div className="group h-full flex flex-col relative overflow-hidden rounded-lg shadow-md bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
-        <div className="animate-pulse">
-          <div className="relative h-48 bg-gray-200 dark:bg-gray-700"></div>
-          <div className="flex flex-col flex-grow p-6">
-            <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2"></div>
-            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full mb-4"></div>
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="h-5 w-20 bg-gray-200 dark:bg-gray-700 rounded"></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -72,31 +52,17 @@ export default function Projects() {
         <title>Projects</title>
       </Head>
       <section id="project-list">
-        <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
-            <File className="mr-2" />
-            プロジェクト
-          </h2>
-          <hr className="h-px mb-5 bg-yellow-400 border-0" />
-        </motion.div>
+        <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
+          <File className="mr-2" />
+          プロジェクト
+        </h2>
+        <hr className="h-px mb-5 bg-yellow-400 border-0" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="sync">
             {isLoading ? (
               [...Array(6)].map((_, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
                   <SkeletonProjectCard />
-                </motion.div>
               ))
             ) : (
               projects.map((project, index) => (

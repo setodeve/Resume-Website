@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import nextConfig from '../../next.config';
+import SkeletonProjectCard from './SkeletonProjectCard';
 
 const BASE_PATH = nextConfig.basePath || "";
 
@@ -23,27 +24,6 @@ interface Experience {
     link?: string;
   }[];
   technologies?: string[];
-}
-
-function SkeletonCard() {
-  return (
-    <div className="card rounded-lg p-6 shadow-md bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700">
-      <div className="animate-pulse">
-        <div className="flex justify-between items-start mb-4">
-          <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-1/3"></div>
-          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/4"></div>
-        </div>
-        <div className="space-y-4">
-          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
-            <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
-            <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded md:col-span-2"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 export default function About() {
@@ -86,29 +66,16 @@ export default function About() {
         <title>Resume</title>
       </Head>
       <section className="text-gray-200 py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-            <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
-              <Building className="mr-2" />
-              職務経歴
-            </h2>
-          <hr className="h-px mb-5 bg-yellow-400 border-0" />
-        </motion.div>
+        <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
+          <Building className="mr-2" />
+          職務経歴
+        </h2>
+        <hr className="h-px mb-5 bg-yellow-400 border-0" />
         
         <div className="space-y-8">
           <AnimatePresence mode="sync">
             {isLoading ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <SkeletonCard />
-              </motion.div>
+                <SkeletonProjectCard />
             ) : (
               experiences.map((experience) => (
                 <motion.div
