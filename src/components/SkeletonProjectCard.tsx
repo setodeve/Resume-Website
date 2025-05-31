@@ -1,4 +1,4 @@
-function SkeletonProjectCard() {
+export default function SkeletonProjectCard() {
   return (
     <div className="h-full">
       <div className="group h-full flex flex-col relative overflow-hidden rounded-lg shadow-md bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
@@ -18,5 +18,3 @@ function SkeletonProjectCard() {
     </div>
   );
 }
-
-export default SkeletonProjectCard;
