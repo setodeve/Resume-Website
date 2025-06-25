@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import About from '../components/About';
 import Projects from '../components/Project';
-import StarryBackground from '../components/StarryBackground';
+import P5Background from '../components/P5Background';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <div className="dark font-sans">
-        <StarryBackground />
+        <P5Background />
         <div className="min-h-screen text-gray-800 dark:text-gray-300">
           <Header />
           <main className="mx-auto max-w-3xl p-4 selection:bg-black text-gray-500 dark:text-gray-300">
