@@ -16,9 +16,9 @@ const P5Background = () => {
     // クライアントサイドでのみp5をインポート
     import('p5').then((p5Module) => {
       const p5 = p5Module.default;
-      let p5Instance: any;
+      let p5Instance: InstanceType<typeof p5> | null = null;
 
-      const sketch = (p: any) => {
+      const sketch = (p: InstanceType<typeof p5>) => {
         const particles: Particle[] = [];
         const numParticles = 80;
 
