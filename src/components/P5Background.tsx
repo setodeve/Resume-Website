@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import type p5 from 'p5';
 
 const P5Background = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
-  const p5InstanceRef = useRef<any>(null);
+  const p5InstanceRef = useRef<p5 | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -14,14 +15,14 @@ const P5Background = () => {
   useEffect(() => {
     if (!isClient || typeof window === 'undefined' || !canvasRef.current) return;
 
-    let p5Instance: any = null;
+    let p5Instance: p5 | null = null;
 
     const initP5 = async () => {
       try {
         const p5Module = await import('p5');
         const p5 = p5Module.default;
 
-        const sketch = (p: any) => {
+        const sketch = (p: p5) => {
           const particles: Particle[] = [];
           const numParticles = 80;
 
@@ -80,7 +81,9 @@ const P5Background = () => {
 
           p.setup = () => {
             const canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-            canvas.parent(canvasRef.current);
+            if (canvasRef.current) {
+              canvas.parent(canvasRef.current);
+            }
             
             for (let i = 0; i < numParticles; i++) {
               particles.push(new Particle());
