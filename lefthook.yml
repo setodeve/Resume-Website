@@ -1,0 +1,10 @@
+# Lefthook configuration for Resume-Website
+# https://lefthook.dev/configuration/
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: eslint
+      glob: "*.{js,ts,jsx,tsx}"
+      run: pnpm lint {staged_files}
+      stage_fixed: true 
