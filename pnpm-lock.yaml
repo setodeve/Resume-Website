@@ -22,7 +22,7 @@ importers:
         version: 15.3.3(@babel/core@7.28.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       p5:
         specifier: ^2.0.3
-        version: 2.0.3
+        version: 2.0.4
       react:
         specifier: ^19.1.1
         version: 19.1.1
@@ -2256,8 +2256,8 @@ packages:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
     engines: {node: '>=10'}
 
-  p5@2.0.3:
-    resolution: {integrity: sha512-MA2fyH4qWWcUGgBnkyz6/B6Uhmr/cF/t+xryeAO6bt/bJoWc8/U6nRVbdP87GMBG5w2H9ej9pUcRqoQEzhtusA==}
+  p5@2.0.4:
+    resolution: {integrity: sha512-OAbUg0T8fSyQJRH3aTb12tNLDuWnpoJ/kdyXJmg5R+EJ2Sp5idS7gOarzR3gZ4rwvMnCanVZlSo5SzloZDauZQ==}
 
   pako@2.1.0:
     resolution: {integrity: sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==}
@@ -5036,7 +5036,7 @@ snapshots:
     dependencies:
       p-limit: 3.1.0
 
-  p5@2.0.3:
+  p5@2.0.4:
     dependencies:
       '@davepagurek/bezier-path': 0.0.2
       '@japont/unicode-range': 1.0.0
