@@ -17,7 +17,6 @@ eslintConfig.push({
 eslintConfig.push({
   rules: {
     'no-unused-vars': 'warn',
-    indent: ['error', 2],
     "import/order": [
       'error',
       {
