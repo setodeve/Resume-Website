@@ -6,5 +6,5 @@ pre-commit:
   jobs:
     - name: eslint
       glob: "*.{js,ts,jsx,tsx}"
-      run: pnpm lint {staged_files}
+      run: pnpm lint
       stage_fixed: true 

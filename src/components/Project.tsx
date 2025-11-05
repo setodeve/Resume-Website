@@ -23,7 +23,7 @@ interface Project {
 
 function Badge({ text }: { text: string }) {
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+    <span className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 shadow-sm">
       {text}
     </span>
   );
@@ -53,14 +53,14 @@ export default function Projects() {
       <Head>
         <title>Projects</title>
       </Head>
-      <section id="project-list">
-        <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
-          <File className="mr-2" />
+      <section id="project-list" className="py-12">
+        <h2 className="flex items-center text-4xl font-bold mb-4 text-gray-100">
+          <File className="mr-3 w-10 h-10" />
           プロジェクト
         </h2>
-        <hr className="h-px mb-5 bg-yellow-400 border-0" />
+        <hr className="h-1 mb-8 bg-yellow-400 border-0 rounded" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="sync">
             {isLoading ? (
               [...Array(6)].map((_, index) => (
@@ -70,33 +70,33 @@ export default function Projects() {
               projects.map((project, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full"
                 >
                   <Link href={project.source} className="h-full block">
                     <motion.div
-                      className="group h-full flex flex-col relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
-                      whileHover={{ scale: 1.02 }}
+                      className="group h-full flex flex-col relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-gray-700 hover:border-yellow-400 dark:hover:border-yellow-400"
+                      whileHover={{ scale: 1.03, y: -6 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="relative h-48">
+                      <div className="relative h-52 overflow-hidden">
                         <Image
                           src={project.thumbnail[0]}
                           alt={`${project.title} Thumbnail`}
                           width={500}
                           height={300}
-                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                           priority={true}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                       <div className="flex flex-col flex-grow p-6">
-                        <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                        <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100 group-hover:text-yellow-500 dark:group-hover:text-yellow-400 transition-colors duration-200">
                           {project.title}
                         </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow leading-relaxed">
                           {project.summary}
                         </p>
                         <div className="flex flex-wrap gap-2 mt-auto">

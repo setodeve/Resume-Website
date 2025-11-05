@@ -67,14 +67,14 @@ export default function About() {
       <Head>
         <title>Resume</title>
       </Head>
-      <section className="text-gray-200 py-8">
-        <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
-          <Building className="mr-2" />
+      <section className="text-gray-200 py-12">
+        <h2 className="flex items-center text-4xl font-bold mb-4 text-gray-100">
+          <Building className="mr-3 w-10 h-10" />
           職務経歴
         </h2>
-        <hr className="h-px mb-5 bg-yellow-400 border-0" />
+        <hr className="h-1 mb-8 bg-yellow-400 border-0 rounded" />
         
-        <div className="space-y-8">
+        <div className="space-y-10">
           <AnimatePresence mode="sync">
             {isLoading ? (
               <SkeletonProjectCard />
@@ -82,68 +82,72 @@ export default function About() {
               experiences.map((experience) => (
                 <motion.div
                   key={experience.id}
-                  className="card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-800 border border-gray-100 dark:border-gray-700"
-                  initial={{ opacity: 0, y: 0 }}
+                  className="card rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-gray-700 hover:border-yellow-400 dark:hover:border-yellow-400"
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
+                  whileHover={{ y: -4 }}
                 >
-                  <div className="flex flex-col space-y-2">
-                    <div className="flex justify-between items-start">
+                  <div className="flex flex-col space-y-3">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-700 dark:text-gray-200">
+                        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-1">
                           {experience.company}
                         </h3>
                         {experience.position && (
-                          <p className="text-gray-600 dark:text-gray-400">
+                          <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
                             職種 : {experience.position}
                           </p>
                         )}
                       </div>
-                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                        <Calendar className="mr-1" />
+                      <div className="flex items-center text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-neutral-700 px-3 py-1.5 rounded-lg">
+                        <Calendar className="mr-2 w-4 h-4" />
                         {experience.period}
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 space-y-6">
+                  <div className="mt-8 space-y-8">
                     {experience.experiences.map((exp, expIndex) => (
-                      <div key={expIndex} className="mt-4 space-y-6">
-                        <div className="flex items-center text-gray-700 dark:text-gray-200 mb-2">
-                          <Calendar className="mr-2" />
-                          <h4 className="text-lg font-semibold">{exp.period}</h4>
+                      <div key={expIndex} className="mt-6 space-y-5 border-l-4 border-yellow-400 pl-6">
+                        <div className="flex items-center text-gray-700 dark:text-gray-200 mb-3">
+                          <Calendar className="mr-2 w-5 h-5" />
+                          <h4 className="text-xl font-bold">{exp.period}</h4>
                         </div>
-                        <div className="space-y-4">
-                          <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
-                            <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2">【プロジェクト概要】</h5>
-                            <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">{exp.projectOverview}</p>
+                        <div className="space-y-5">
+                          <div className="bg-gray-50 dark:bg-neutral-700/50 p-5 rounded-lg border border-gray-200 dark:border-neutral-600">
+                            <h5 className="font-bold text-gray-800 dark:text-gray-100 mb-3 text-base">【プロジェクト概要】</h5>
+                            <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line leading-relaxed">{exp.projectOverview}</p>
                           </div>
-                          <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
-                            <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2">【業務内容】</h5>
+                          <div className="bg-gray-50 dark:bg-neutral-700/50 p-5 rounded-lg border border-gray-200 dark:border-neutral-600">
+                            <h5 className="font-bold text-gray-800 dark:text-gray-100 mb-3 text-base">【業務内容】</h5>
                             {Array.isArray(exp.responsibilities) ? (
-                              <ul className="space-y-2">
+                              <ul className="space-y-2.5">
                                 {exp.responsibilities.map((resp, i) => (
-                                  <li key={i} className="text-gray-600 dark:text-gray-300">{resp}</li>
+                                  <li key={i} className="text-gray-700 dark:text-gray-300 leading-relaxed flex items-start">
+                                    <span className="text-yellow-400 mr-2 mt-1">▹</span>
+                                    <span>{resp}</span>
+                                  </li>
                                 ))}
                               </ul>
                             ) : (
-                              <p className="text-gray-600 dark:text-gray-300">{exp.responsibilities}</p>
+                              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{exp.responsibilities}</p>
                             )}
                           </div>
                           {exp.technologies && (
-                            <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
-                              <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
+                            <div className="bg-gray-50 dark:bg-neutral-700/50 p-5 rounded-lg border border-gray-200 dark:border-neutral-600">
+                              <h5 className="font-bold text-gray-800 dark:text-gray-100 mb-4 text-base flex items-center">
                                 【使用技術】
                               </h5>
                               <div className="space-y-4">
                                 {Object.entries(exp.technologies).map(([category, techs], index) => (
                                   <div key={index}>
-                                    <h6 className="text-sm font-bold text-gray-700 dark:text-gray-200 mb-1">{category}</h6>
+                                    <h6 className="text-sm font-bold text-gray-800 dark:text-gray-100 mb-2">{category}</h6>
                                     <div className="flex flex-wrap gap-2">
                                       {techs.map((tech, i) => (
                                         <span
                                           key={i}
-                                          className={`inline-block text-sm font-medium px-2.5 py-0.5 rounded ${getCategoryColor(category)}`}
+                                          className={`inline-block text-sm font-medium px-3 py-1 rounded-md shadow-sm ${getCategoryColor(category)}`}
                                         >
                                           {tech}
                                         </span>
@@ -154,13 +158,16 @@ export default function About() {
                               </div>
                             </div>
                           )}
-                          <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
-                            <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
+                          <div className="bg-gray-50 dark:bg-neutral-700/50 p-5 rounded-lg border border-gray-200 dark:border-neutral-600">
+                            <h5 className="font-bold text-gray-800 dark:text-gray-100 mb-3 text-base flex items-center">
                               【実績】
                             </h5>
-                            <ul className="space-y-2">
+                            <ul className="space-y-2.5">
                               {exp.achievements.map((achievement, i) => (
-                                <li key={i} className="text-gray-600 dark:text-gray-300">{achievement}</li>
+                                <li key={i} className="text-gray-700 dark:text-gray-300 leading-relaxed flex items-start">
+                                  <span className="text-yellow-400 mr-2 mt-1">✓</span>
+                                  <span>{achievement}</span>
+                                </li>
                               ))}
                             </ul>
                           </div>
