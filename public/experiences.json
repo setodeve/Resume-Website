@@ -11,11 +11,12 @@
         "responsibilities": [
           "管理画面フロントエンド開発",
           "コンポーネント設計・実装",
-          "ユニットテスト・統合テスト・E2Eテスト作成"
+          "ユニットテスト・統合テスト・E2Eテスト作成",
+          "CodePipelineの整備"
         ],
         "technologies": {
           "フロントエンド": ["Nuxt", "TypeScript", "Vue3"],
-          "ツール": ["Vitest", "Playwright"]
+          "ツール": ["Vitest", "Playwright", "Terraform"]
         },
         "achievements": [
           "DDD（ドメイン駆動設計）を意識した保守性の高いコードを実装。",
