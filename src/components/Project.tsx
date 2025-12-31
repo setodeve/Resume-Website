@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { File } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -54,11 +53,6 @@ export default function Projects() {
         <title>Projects</title>
       </Head>
       <section id="project-list">
-        <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
-          <File className="mr-2" />
-          プロジェクト
-        </h2>
-        <hr className="h-px mb-5 bg-yellow-400 border-0" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="sync">
