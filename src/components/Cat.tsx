@@ -14,7 +14,7 @@ export default function Cat() {
   }, [cats]);
 
   return (
-    <div className="relative">
+    <div className="relative opacity-1 hover:opacity-100 transition-opacity duration-300">
       <motion.span
         className="inline-block cursor-pointer rotate-10"
         animate={{
@@ -37,10 +37,10 @@ export default function Cat() {
       </motion.span>
       {showTooltip && (
         <motion.div
-          className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-gray-800 text-white text-sm rounded shadow-lg"
-          initial={{ opacity: 0, y: -10 }}
+          className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-sm rounded shadow-lg"
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
+          exit={{ opacity: 0, y: 10 }}
         >
           hi
         </motion.div>

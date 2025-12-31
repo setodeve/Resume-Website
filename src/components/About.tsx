@@ -1,7 +1,7 @@
 "use client";
 
 import Head from 'next/head';
-import { Building, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -68,11 +68,6 @@ export default function About() {
         <title>Resume</title>
       </Head>
       <section className="text-gray-200 py-8">
-        <h2 className="flex items-center text-3xl font-bold mb-2 text-gray-100">
-          <Building className="mr-2" />
-          職務経歴
-        </h2>
-        <hr className="h-px mb-5 bg-yellow-400 border-0" />
         
         <div className="space-y-8">
           <AnimatePresence mode="sync">
