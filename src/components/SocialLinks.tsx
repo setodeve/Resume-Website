@@ -1,10 +1,26 @@
 "use client";
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { Github, Briefcase, FileText } from "lucide-react";
 
 export default function SocialLinks() {
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 flex-wrap">
+      <Link
+        href="/works"
+        className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-gray-100 transition-colors duration-200"
+        aria-label="Works"
+      >
+        <Briefcase size={20} />
+        <span>Works</span>
+      </Link>
+      <Link
+        href="/cv"
+        className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-gray-100 transition-colors duration-200"
+        aria-label="CV"
+      >
+        <FileText size={20} />
+        <span>CV</span>
+      </Link>
       <Link
         href="https://github.com/setodeve"
         target="_blank"
