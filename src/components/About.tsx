@@ -67,7 +67,7 @@ export default function About() {
       <Head>
         <title>Resume</title>
       </Head>
-      <section className="text-gray-200 py-8">
+      <section className="text-gray-800 dark:text-gray-200 py-8">
         
         <div className="space-y-8">
           <AnimatePresence mode="sync">

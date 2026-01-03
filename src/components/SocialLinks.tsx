@@ -7,7 +7,7 @@ export default function SocialLinks() {
     <div className="flex items-center justify-center gap-4 flex-wrap">
       <Link
         href="/works"
-        className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-gray-100 transition-colors duration-200"
+        className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-200"
         aria-label="Works"
       >
         <Briefcase size={20} />
@@ -15,7 +15,7 @@ export default function SocialLinks() {
       </Link>
       <Link
         href="/cv"
-        className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-gray-100 transition-colors duration-200"
+        className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-200"
         aria-label="CV"
       >
         <FileText size={20} />
@@ -25,7 +25,7 @@ export default function SocialLinks() {
         href="https://github.com/setodeve"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-gray-100 transition-colors duration-200"
+        className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-200"
         aria-label="GitHub"
       >
         <Github size={20} />
@@ -35,7 +35,7 @@ export default function SocialLinks() {
         href="https://qiita.com/keiswe"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-gray-100 transition-colors duration-200"
+        className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-200"
         aria-label="Qiita"
       >
         <svg

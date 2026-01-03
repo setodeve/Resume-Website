@@ -6,7 +6,7 @@ import Cat from "@/components/Cat";
 
 export default function Home() {
   return (
-    <div className="dark font-sans min-h-screen bg-[#0a0a0a] text-gray-300">
+    <div className="font-sans min-h-screen text-gray-800 dark:text-gray-300">
       <div className="flex flex-col min-h-screen">
         <main className="flex-1 flex flex-col items-center justify-center px-4">
           <div className="space-y-8">
