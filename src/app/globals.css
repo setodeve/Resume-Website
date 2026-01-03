@@ -22,7 +22,11 @@
   }
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    @slot;
+  }
+}
 
 body {
   background-color: var(--background);

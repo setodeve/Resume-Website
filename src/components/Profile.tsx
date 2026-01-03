@@ -13,7 +13,7 @@ export default function Profile() {
         priority
       />
       <div className="text-center">
-        <h1 className="text-xl font-medium text-gray-900 dark:text-gray-100">setodeve</h1>
+        <h1 className="text-xl font-medium text-gray-900 dark:text-white">setodeve</h1>
         <p className="text-gray-600 dark:text-gray-400">Engineer</p>
       </div>
     </div>
