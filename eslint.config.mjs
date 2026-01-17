@@ -1,30 +1,18 @@
-import { FlatCompat } from '@eslint/eslintrc'
-
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-  recommendedConfig: {},
-})
+import nextConfig from 'eslint-config-next'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 const eslintConfig = [
-  ...compat.config({
-    extends: ['eslint:recommended', 'next/core-web-vitals', 'next/typescript', 'prettier'],
-  }),
+  ...nextConfig,
+  eslintConfigPrettier,
+  {
+    ignores: ['node_modules/', '.next/', 'out/'],
+  },
+  {
+    rules: {
+      'no-unused-vars': 'warn',
+      'react-hooks/set-state-in-effect': 'warn',
+    },
+  },
 ]
 
-eslintConfig.push({
-  ignores: ["node_modules/", ".next/", "out/"],
-});
-eslintConfig.push({
-  rules: {
-    'no-unused-vars': 'warn',
-    "import/order": [
-      'error',
-      {
-        'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-        'newlines-between': 'always',
-      },
-    ],
-  },
-});
-
-export default eslintConfig;
+export default eslintConfig
