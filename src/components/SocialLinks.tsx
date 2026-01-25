@@ -49,6 +49,24 @@ export default function SocialLinks() {
         </svg>
         <span>Qiita</span>
       </Link>
+      <Link
+        href="https://scrapbox.io/setokei/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-200"
+        aria-label="Scrapbox"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.4a9.6 9.6 0 110 19.2 9.6 9.6 0 010-19.2zm-1.2 4.8v9.6h2.4V7.2h-2.4zm-3.6 2.4v7.2H9.6V9.6H7.2zm7.2 0v7.2h2.4V9.6h-2.4z" />
+        </svg>
+        <span>Scrapbox</span>
+      </Link>
     </div>
   );
 }
