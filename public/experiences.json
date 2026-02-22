@@ -43,7 +43,7 @@
       },
       {
         "period": "2024/8 - 2025/2",
-        "projectOverview": "販売促進アプリ開発",
+        "projectOverview": "営業支援Webアプリ開発",
         "responsibilities": [
           "テーブル設計・実装",
           "API設計・実装",
@@ -67,6 +67,29 @@
   },
   {
     "id": 2,
+    "company": "N社",
+    "period": "2025/12 - 2026/2",
+    "position": "Webエンジニア",
+    "experiences": [
+      {
+        "period": "2025/12 - 2026/2",
+        "projectOverview": "テナント向けWebアプリ開発",
+        "responsibilities": [
+          "LINEログイン認証モジュールの設計・実装"
+        ],
+        "technologies": {
+          "バックエンド": ["PHP"],
+          "フロントエンド": ["JavaScript"]
+        },
+        "achievements": [
+          "テナント向けWebアプリにLINEログイン認証モジュールを実装。",
+          "Claude Codeを活用し、設計・実装・テスト工程の効率化を推進。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
     "company": "Yamada UIメンテナ",
     "period": "2024/2 - 2024/9",
     "position": "メンテナ",
@@ -91,7 +114,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "company": "F社",
     "period": "2018/4-2023/10",
     "position": "システムエンジニア",
