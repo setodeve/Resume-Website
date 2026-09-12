@@ -21,8 +21,8 @@
           "インフラ": ["Realtime Database", "Firestore", "Authentication", "App Check", "Hosting"]
         },
         "achievements": [
-          "Cloud Functionsを使用せず、DBセキュリティルールとApp Checkの組み合わせによりセキュリティを担保する構成を設計・実装。",
-          "Firebaseをメインに据えたサーバーサイドの設計・実装を担当。",
+          "Cloud Functionsを使用せず、DBセキュリティルールとApp Checkを組み合わせたセキュリティ対策を実現。",
+          "Firebaseをメインとしたサーバーサイド構成により、迅速な開発・リリースを実現。",
           "GASをAPIとして活用し、外部サービスとの連携を効率的に実装。"
         ]
       },
