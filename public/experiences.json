@@ -10,6 +10,7 @@
         "projectOverview": "研修支援Webアプリ開発",
         "responsibilities": [
           "Firebaseを用いたサーバーサイド設計・実装",
+          "DBセキュリティルール・App Checkによるセキュリティ対策設計",
           "GASを用いたAPI実装",
           "フロントエンドとの結合・動作確認",
           "フロントエンドコードのレビュー"
@@ -20,8 +21,8 @@
           "インフラ": ["Realtime Database", "Firestore", "Authentication", "App Check", "Hosting"]
         },
         "achievements": [
+          "Cloud Functionsを使用せず、DBセキュリティルールとApp Checkの組み合わせによりセキュリティを担保する構成を設計・実装。",
           "Firebaseをメインに据えたサーバーサイドの設計・実装を担当。",
-          "App Checkを導入し、不正リクエスト対策によるセキュリティ強化を実現。",
           "GASをAPIとして活用し、外部サービスとの連携を効率的に実装。"
         ]
       },
