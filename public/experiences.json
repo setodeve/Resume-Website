@@ -6,6 +6,26 @@
     "position": "Webエンジニア",
     "experiences": [
       {
+        "period": "2026/6 - 2026/9",
+        "projectOverview": "研修支援Webアプリ開発",
+        "responsibilities": [
+          "Firebaseを用いたサーバーサイド設計・実装",
+          "GASを用いたAPI実装",
+          "フロントエンドとの結合・動作確認",
+          "フロントエンドコードのレビュー"
+        ],
+        "technologies": {
+          "バックエンド": ["Firebase", "GAS"],
+          "フロントエンド": ["React", "JavaScript"],
+          "インフラ": ["Realtime Database", "Firestore", "Authentication", "App Check", "Hosting"]
+        },
+        "achievements": [
+          "Firebaseをメインに据えたサーバーサイドの設計・実装を担当。",
+          "App Checkを導入し、不正リクエスト対策によるセキュリティ強化を実現。",
+          "GASをAPIとして活用し、外部サービスとの連携を効率的に実装。"
+        ]
+      },
+      {
         "period": "2025/4 - 現在",
         "projectOverview": "POSシステム開発",
         "responsibilities": [
