@@ -7,7 +7,7 @@
     "experiences": [
       {
         "period": "2026/6 - 2026/9",
-        "projectOverview": "研修支援Webアプリ開発",
+        "projectOverview": "講習支援Webアプリ開発",
         "responsibilities": [
           "Firebaseを用いたサーバーサイド設計・実装",
           "DBセキュリティルール・App Checkによるセキュリティ対策設計",
