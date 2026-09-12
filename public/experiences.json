@@ -18,12 +18,12 @@
         "technologies": {
           "バックエンド": ["Firebase", "GAS"],
           "フロントエンド": ["React", "JavaScript"],
-          "インフラ": ["Realtime Database", "Firestore", "Authentication", "App Check", "Hosting"]
+          "インフラ": ["Realtime Database", "Firestore", "Authentication", "App Check", "Firebase Hosting"]
         },
         "achievements": [
-          "Cloud Functionsを使用せず、DBセキュリティルールとApp Checkを組み合わせたセキュリティ対策を実現。",
+          "Cloud Functionsを使用せず、DBセキュリティルールとApp Checkを組み合わせることで、運用コスト・保守負荷を抑えたセキュリティ対策を実現。",
           "顧客への仕様確認・進捗報告を行いながら、要件通りのリリースを実現。",
-          "GASをAPIとして活用し、外部サービスとの連携を効率的に実装。"
+          "GASをAPIとして活用し、シンプルな構成でのAPI実装を実現。"
         ]
       },
       {
