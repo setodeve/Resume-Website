@@ -63,5 +63,14 @@
     "technologies": ["Next.js", "TypeScript", "RubyOnRails"],
     "thumbnail": ["https://raw.githubusercontent.com/setodeve/CatalogEasy/refs/heads/main/documents/design/top.png"],
     "thumbnail-width" :"600"
+  },
+  {
+    "id": 8,
+    "title": "careful-merge",
+    "summary": "GitHubのプルリクエストでマージ方法を確認してから実行できるChrome拡張機能です。",
+    "source": "https://github.com/setodeve/careful-merge",
+    "technologies": ["TypeScript", "WXT", "Chrome Extension"],
+    "thumbnail": ["https://raw.githubusercontent.com/setodeve/careful-merge/main/assets/readme.png"],
+    "thumbnail-width" :"600"
   }
 ]
