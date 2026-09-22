@@ -149,16 +149,18 @@ export default function About() {
                               </div>
                             </div>
                           )}
-                          <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
-                            <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
-                              【実績】
-                            </h5>
-                            <ul className="space-y-2">
-                              {exp.achievements.map((achievement, i) => (
-                                <li key={i} className="text-gray-600 dark:text-gray-300">{achievement}</li>
-                              ))}
-                            </ul>
-                          </div>
+                          {exp.achievements.length > 0 && (
+                            <div className="bg-gray-100 dark:bg-neutral-700 p-4 rounded-lg">
+                              <h5 className="font-semibold text-gray-700 dark:text-gray-200 mb-2 flex items-center">
+                                【実績】
+                              </h5>
+                              <ul className="space-y-2">
+                                {exp.achievements.map((achievement, i) => (
+                                  <li key={i} className="text-gray-600 dark:text-gray-300">{achievement}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
                           {exp.link && (
                             <div className="mt-4">
                               <Link 
