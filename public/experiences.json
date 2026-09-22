@@ -1,72 +1,56 @@
 [
   {
     "id": 1,
-    "company": "P社",
+    "company": "Webサービス開発企業",
     "period": "2024/8 - 現在",
     "position": "Webエンジニア",
     "experiences": [
       {
-        "period": "2026/6 - 2026/9",
-        "projectOverview": "講習支援Webアプリ開発",
+        "period": "2026",
+        "projectOverview": "業務支援Webアプリのバックエンド開発",
         "responsibilities": [
-          "Firebaseを用いたサーバーサイド設計・実装",
-          "DBセキュリティルール・App Checkによるセキュリティ対策設計",
-          "GASを用いたAPI実装",
-          "フロントエンドとの結合・動作確認",
-          "フロントエンドコードのレビュー",
-          "GitHub ActionsによるCI/CD構築",
-          "GAS-Firebase間のサービスアカウント・IAMロール設計"
+          "サーバーサイドの設計・実装",
+          "認証・アクセス制御の設計",
+          "外部サービスと連携するAPIの実装",
+          "フロントエンドとの結合・動作確認、コードレビュー",
+          "CI/CDの構築"
         ],
         "technologies": {
-          "バックエンド": ["Firebase", "GAS"],
+          "バックエンド": ["Firebase", "Google Apps Script"],
           "フロントエンド": ["React", "JavaScript"],
-          "インフラ": ["Realtime Database", "Firestore", "Authentication", "App Check", "Firebase Hosting"]
+          "ツール": ["GitHub Actions"]
         },
-        "achievements": [
-          "Cloud Functionsを使用せず、DBセキュリティルールとApp Checkを組み合わせることで、運用コスト・保守負荷を抑えたセキュリティ対策を実現。",
-          "顧客への仕様確認・進捗報告を行いながら、要件通りのリリースを実現。",
-          "GASからFirebaseへのアクセスに、サービスアカウント・IAMロール・借用チェーン(サービスアカウントの権限借用)を用いた認証設計を実施。"
-        ]
+        "achievements": ["運用コストと保守性を考慮して、認証・アクセス制御を設計。", "顧客との仕様確認・進捗共有を行い、リリースまで対応。"]
       },
       {
-        "period": "2025/4 - 現在",
-        "projectOverview": "POSシステム開発",
-        "responsibilities": [
-          "管理画面フロントエンド開発",
-          "コンポーネント設計・実装",
-          "ユニットテスト・統合テスト・E2Eテスト作成"
-        ],
+        "period": "2025 - 現在",
+        "projectOverview": "業務システムの管理画面開発",
+        "responsibilities": ["管理画面フロントエンド開発", "コンポーネント設計・実装", "ユニットテスト・統合テスト・E2Eテスト作成"],
         "technologies": {
           "フロントエンド": ["Nuxt", "TypeScript", "Vue3"],
           "ツール": ["Vitest", "Playwright"]
         },
         "achievements": [
-          "DDD（ドメイン駆動設計）を意識した保守性の高いコードを実装。",
-          "Atom Designを導入し、開発効率、保守性向上。",
-          "Playwrightを活用したE2Eテストにより品質向上に貢献。"
+          "DDD（ドメイン駆動設計）を意識して実装。",
+          "Atomic Designを取り入れ、UIコンポーネントを整理。",
+          "VitestとPlaywrightを用いて、ユニットテスト・統合テスト・E2Eテストを作成。"
         ]
       },
       {
-        "period": "2025/2 - 2025/4",
-        "projectOverview": "ECサイト改修開発",
-        "responsibilities": [
-          "API設計・実装",
-          "テストコード作成"
-        ],
+        "period": "2025",
+        "projectOverview": "既存WebサービスのAPI改修",
+        "responsibilities": ["API設計・実装", "テストコード作成"],
         "technologies": {
           "バックエンド": ["Python", "Django"],
           "フロントエンド": ["HTML", "JavaScript"],
           "インフラ": ["MySQL", "Docker"],
           "ツール": ["pytest", "Playwright"]
         },
-        "achievements": [
-          "リファクタリングを見据えた包括的なテスト設計を実施。",
-          "Playwrightを用いたE2Eテストで品質保証に貢献。"
-        ]
+        "achievements": ["リファクタリングを見据えたテスト設計を実施。", "Playwrightを用いたE2Eテストを作成し、改修箇所の動作確認を自動化。"]
       },
       {
-        "period": "2024/8 - 2025/2",
-        "projectOverview": "営業支援Webアプリ開発",
+        "period": "2024 - 2025",
+        "projectOverview": "業務支援WebアプリのAPI・管理画面開発",
         "responsibilities": [
           "テーブル設計・実装",
           "API設計・実装",
@@ -77,65 +61,50 @@
         "technologies": {
           "バックエンド": ["Python", "Django"],
           "フロントエンド": ["HTML", "Bootstrap", "Vue3", "JavaScript"],
-          "インフラ": ["MySQL", "DynamoDB", "S3", "Redis", "Minio", "Docker"],
+          "インフラ": ["MySQL", "Docker"],
           "ツール": ["Swagger"]
         },
         "achievements": [
-          "包括的なユニットテストの実装により品質向上に貢献。",
-          "Docker環境を構築し、開発環境のセットアップ時間を大幅に短縮。",
-          "API仕様書の整備により、開発チーム間のコミュニケーション効率を向上。"
+          "ユニットテスト・統合テストを実装。",
+          "Dockerによる開発環境を構築し、セットアップを効率化。",
+          "API仕様書を整備し、開発チーム内での仕様共有を支援。"
         ]
       }
     ]
   },
   {
     "id": 2,
-    "company": "N社",
+    "company": "業務委託先（副業）",
     "period": "2025/12 - 現在",
     "position": "Webエンジニア（副業・業務委託）",
     "experiences": [
       {
-        "period": "2026/2 - 現在",
-        "projectOverview": "学会運営支援Webアプリ開発",
-        "responsibilities": [
-          "学会運営を支援するWebアプリケーションのバックエンド開発を中心に担当"
-        ],
+        "period": "2026 - 現在",
+        "projectOverview": "業務支援Webアプリのバックエンド開発",
+        "responsibilities": ["Laravel・PHPを用いたバックエンド開発を中心に担当"],
         "technologies": {
-          "バックエンド": [
-            "Laravel",
-            "PHP"
-          ],
-          "インフラ": [
-            "PostgreSQL"
-          ]
+          "バックエンド": ["Laravel", "PHP"],
+          "インフラ": ["PostgreSQL"]
         },
-        "achievements": [
-          "Laravel・PHP・PostgreSQLを用いたバックエンド開発に継続して参画。"
-        ]
+        "achievements": []
       },
       {
-        "period": "2025/12 - 2026/2",
-        "projectOverview": "テナント向けWebアプリ開発",
+        "period": "2025 - 2026",
+        "projectOverview": "Webアプリの認証機能開発・生成AI活用支援",
         "responsibilities": [
-          "LINEログイン認証モジュールの設計・実装",
-          "副業先におけるClaudeの導入・活用支援",
-          "Claudeで実現できることや開発業務での活用方法のドキュメント化・共有"
+          "外部認証サービスと連携する認証機能の設計・実装",
+          "Claudeの導入・活用に向けた情報整理",
+          "開発業務での活用方法のドキュメント化・チームへの共有"
         ],
         "technologies": {
-          "バックエンド": [
-            "PHP"
-          ],
-          "フロントエンド": [
-            "JavaScript"
-          ],
-          "ツール": [
-            "Claude Code"
-          ]
+          "バックエンド": ["PHP"],
+          "フロントエンド": ["JavaScript"],
+          "ツール": ["Claude Code"]
         },
         "achievements": [
-          "テナント向けWebアプリにLINEログイン認証モジュールを実装。",
-          "Claude Codeを活用し、設計・実装・テスト工程の効率化を推進。",
-          "Claudeで実現できることや活用方法をドキュメントにまとめて副業先へ共有し、導入・活用を検討するための情報整理を行った。"
+          "外部認証サービスと連携する認証機能を実装。",
+          "Claude Codeを設計・実装・テスト工程で活用。",
+          "Claudeで実現できることや活用方法をドキュメントにまとめ、チームの導入検討を支援。"
         ]
       }
     ]
@@ -149,62 +118,46 @@
       {
         "period": "2024/2 - 2024/9",
         "projectOverview": "ReactベースのUIコンポーネントライブラリ「Yamada UI」のメンテナ",
-        "responsibilities": [
-          "アクセシビリティの改善",
-          "ドキュメントの整備と改善",
-          "Issue対応とレビュー参加"
-        ],
+        "responsibilities": ["アクセシビリティの改善", "ドキュメントの整備と改善", "Issue対応とレビュー参加"],
         "technologies": {
           "フロントエンド": ["TypeScript", "React"],
           "ツール": ["Storybook", "Vitest"]
         },
-        "achievements": [
-          "ドキュメント整備とアクセシビリティ改善により開発者体験を向上。"
-        ],
+        "achievements": ["ドキュメント整備とアクセシビリティ改善により開発者体験を向上。"],
         "link": "https://github.com/yamada-ui/yamada-ui"
       }
     ]
   },
   {
     "id": 4,
-    "company": "F社",
+    "company": "システム開発企業",
     "period": "2018/4-2023/11",
     "position": "システムエンジニア",
     "experiences": [
       {
-        "period": "2022-2023",
-        "projectOverview": "車載組込システム開発(車載通信系)",
+        "period": "2022 - 2023",
+        "projectOverview": "組込みソフトウェア開発・テスト改善",
         "responsibilities": ["設計", "実装", "テスト"],
-        "achievements": [
-          "テスト効率化ツールを自主開発し、作業時間を削減。",
-          "エビデンス管理手法の改善提案により品質向上に貢献。"
-        ],
+        "achievements": ["テスト効率化ツールを自主開発。", "テスト結果の管理方法の改善を提案。"],
         "technologies": {
           "バックエンド": ["C"],
           "ツール": ["VBA"]
         }
       },
       {
-        "period": "2021-2022",
-        "projectOverview": "車載組込システム開発(車載安全系)",
+        "period": "2021 - 2022",
+        "projectOverview": "組込みソフトウェア開発・チームリード",
         "responsibilities": ["プロジェクトリーダー", "顧客折衝", "設計", "実装", "テスト"],
-        "achievements": [
-          "要件定義からテストフェーズまでの顧客折衝を担当。",
-          "2名のチームメンバーのマネジメントを実施。"
-        ],
+        "achievements": ["要件定義からテストまで、顧客との仕様調整を担当。", "少人数チームのメンバーをマネジメント。"],
         "technologies": {
           "バックエンド": ["C"]
         }
       },
       {
-        "period": "2018-2021",
-        "projectOverview": "車載組込システム開発(車載安全系)",
+        "period": "2018 - 2021",
+        "projectOverview": "組込みソフトウェア開発・新人育成",
         "responsibilities": ["設計", "実装", "テスト", "新人研修担当"],
-        "achievements": [
-          "テスト実施手順のマニュアル化による標準化を推進。",
-          "VBAを用いたテスト自動化ツールの開発により効率化を実現。",
-          "新入社員のメンターとして技術指導を実施。"
-        ],
+        "achievements": ["テスト実施手順をマニュアル化し、作業を標準化。", "VBAを用いたテスト自動化ツールを開発。", "新入社員のメンターとして技術指導を実施。"],
         "technologies": {
           "バックエンド": ["C"]
         }
