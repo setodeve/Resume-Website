@@ -91,22 +91,51 @@
   {
     "id": 2,
     "company": "N社",
-    "period": "2025/12 - 2026/2",
-    "position": "Webエンジニア",
+    "period": "2025/12 - 現在",
+    "position": "Webエンジニア（副業・業務委託）",
     "experiences": [
+      {
+        "period": "2026/2 - 現在",
+        "projectOverview": "学会運営支援Webアプリ開発",
+        "responsibilities": [
+          "学会運営を支援するWebアプリケーションのバックエンド開発を中心に担当"
+        ],
+        "technologies": {
+          "バックエンド": [
+            "Laravel",
+            "PHP"
+          ],
+          "インフラ": [
+            "PostgreSQL"
+          ]
+        },
+        "achievements": [
+          "Laravel・PHP・PostgreSQLを用いたバックエンド開発に継続して参画。"
+        ]
+      },
       {
         "period": "2025/12 - 2026/2",
         "projectOverview": "テナント向けWebアプリ開発",
         "responsibilities": [
-          "LINEログイン認証モジュールの設計・実装"
+          "LINEログイン認証モジュールの設計・実装",
+          "副業先におけるClaudeの導入・活用支援",
+          "Claudeで実現できることや開発業務での活用方法のドキュメント化・共有"
         ],
         "technologies": {
-          "バックエンド": ["PHP"],
-          "フロントエンド": ["JavaScript"]
+          "バックエンド": [
+            "PHP"
+          ],
+          "フロントエンド": [
+            "JavaScript"
+          ],
+          "ツール": [
+            "Claude Code"
+          ]
         },
         "achievements": [
           "テナント向けWebアプリにLINEログイン認証モジュールを実装。",
-          "Claude Codeを活用し、設計・実装・テスト工程の効率化を推進。"
+          "Claude Codeを活用し、設計・実装・テスト工程の効率化を推進。",
+          "Claudeで実現できることや活用方法をドキュメントにまとめて副業先へ共有し、導入・活用を検討するための情報整理を行った。"
         ]
       }
     ]
@@ -139,7 +168,7 @@
   {
     "id": 4,
     "company": "F社",
-    "period": "2018/4-2023/10",
+    "period": "2018/4-2023/11",
     "position": "システムエンジニア",
     "experiences": [
       {
