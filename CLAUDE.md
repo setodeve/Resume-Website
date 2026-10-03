@@ -23,30 +23,39 @@ This is a **Next.js static resume website** that exports to static files (`outpu
 ### Key Technical Decisions
 
 - **Static Export**: Configured for GitHub Pages deployment (setodeve.github.io/Resume-Website/)
-- **P5.js Integration**: Custom animated background using P5.js particle system
+- **Single page with tabs**: 記事 / Works / 経歴 on `/` (`?tab=articles|works|cv`); `/works` and `/cv` redirect to the matching tab
+- **Build-time articles**: Latest Qiita / Zenn articles are fetched on the server at build time (the deploy workflow also rebuilds daily)
 - **Data-driven Content**: Projects and experiences loaded from JSON files in `/public`
-- **Component Structure**: Modular React components in `/src/components`
 
 ### Project Structure
 
 ```mdx
 src/
 ├── app/
-│   ├── layout.tsx          # Root layout with font configuration
-│   ├── page.tsx            # Main homepage component
-│   └── globals.css         # Global styles
-└── components/
-    ├── P5Background.tsx    # Animated particle background
-    ├── Header.tsx          # Navigation with external links
-    ├── About.tsx           # Personal information section
-    ├── Project.tsx         # Project showcase component
-    └── Cat.tsx             # Interactive cat component
+│   ├── layout.tsx          # Root layout (Inter font, theme init script)
+│   ├── page.tsx            # Single page: profile + tabs
+│   ├── works/, cv/         # Legacy URLs redirecting to tabs
+│   └── globals.css         # Design tokens (light/dark) and global styles
+├── components/
+│   ├── ThemeProvider.tsx   # Light/dark theme state (localStorage)
+│   ├── ThemeToggle.tsx     # Theme toggle button
+│   ├── Profile.tsx         # Avatar, name, social links
+│   ├── ResumeTabs.tsx      # Tab list and panels (client, keyboard navigation)
+│   ├── ArticleList.tsx     # 記事 tab
+│   ├── WorkList.tsx        # Works tab
+│   ├── CareerList.tsx      # 経歴 tab (company-level summary)
+│   └── RedirectToTab.tsx   # Client redirect for legacy URLs
+└── lib/
+    ├── articles.ts         # Qiita / Zenn fetching, sorting, date formatting
+    ├── resume.ts           # Project / experience types and career summary
+    └── tabs.ts             # Tab definitions and pre-paint tab init script
 ```
 
 ### Data Sources
 
 - `/public/projects.json` - Project data with GitHub links and thumbnails
 - `/public/experiences.json` - Professional experience data
+- Qiita API / Zenn API - Latest articles (build time)
 
 ### Next.js Configuration
 
@@ -64,11 +73,12 @@ src/
 ### Testing
 
 - **Vitest** for unit testing
-- **@testing-library/react** for component testing
+- Unit tests live next to the code (`src/lib/*.test.ts`); config in `vitest.config.mts`
 - **jsdom** environment for DOM testing
 
 ### Styling
 
 - **Tailwind CSS** v4.1.11 for styling
-- Dark mode enabled by default
+- Design tokens defined as CSS variables in `globals.css` (`.dark` overrides); dark mode by default
+- Icons: Phosphor Icons (`@phosphor-icons/react`)
 - Responsive design with mobile-first approach

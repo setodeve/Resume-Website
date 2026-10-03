@@ -4,3 +4,6 @@ onlyBuiltDependencies:
   - lefthook
   - sharp
   - unrs-resolver
+
+# サプライチェーン攻撃対策: 公開から 1 日（分単位）経っていないバージョンは解決しない
+minimumReleaseAge: 1440
