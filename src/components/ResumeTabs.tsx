@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useSyncExternalStore, type ReactNode } from "react";
 
 export const TABS = [
   { id: "articles", label: "記事" },
@@ -11,39 +11,44 @@ export const TABS = [
 export type TabId = (typeof TABS)[number]["id"];
 
 const STORAGE_KEY = "tab";
+const TAB_CHANGE_EVENT = "tabchange";
 
 function isTabId(value: string | null): value is TabId {
   return TABS.some((tab) => tab.id === value);
 }
 
 /** URL クエリ（?tab=）を優先し、なければ前回選んだタブを復元する */
-function readInitialTab(): TabId | null {
+function readTab(): TabId {
   const fromQuery = new URLSearchParams(window.location.search).get("tab");
   if (isTabId(fromQuery)) return fromQuery;
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (isTabId(saved)) return saved;
   } catch {}
-  return null;
+  return "articles";
+}
+
+function subscribe(onChange: () => void) {
+  window.addEventListener(TAB_CHANGE_EVENT, onChange);
+  window.addEventListener("popstate", onChange);
+  return () => {
+    window.removeEventListener(TAB_CHANGE_EVENT, onChange);
+    window.removeEventListener("popstate", onChange);
+  };
+}
+
+function selectTab(id: TabId) {
+  try {
+    localStorage.setItem(STORAGE_KEY, id);
+  } catch {}
+  const url = new URL(window.location.href);
+  url.searchParams.set("tab", id);
+  window.history.replaceState(null, "", url);
+  window.dispatchEvent(new Event(TAB_CHANGE_EVENT));
 }
 
 export default function ResumeTabs({ panels }: { panels: Record<TabId, ReactNode> }) {
-  const [current, setCurrent] = useState<TabId>("articles");
-
-  useEffect(() => {
-    const initial = readInitialTab();
-    if (initial) setCurrent(initial);
-  }, []);
-
-  const select = (id: TabId) => {
-    setCurrent(id);
-    try {
-      localStorage.setItem(STORAGE_KEY, id);
-    } catch {}
-    const url = new URL(window.location.href);
-    url.searchParams.set("tab", id);
-    window.history.replaceState(null, "", url);
-  };
+  const current = useSyncExternalStore<TabId>(subscribe, readTab, () => "articles");
 
   return (
     <>
@@ -58,7 +63,7 @@ export default function ResumeTabs({ panels }: { panels: Record<TabId, ReactNode
               id={`tab-${id}`}
               aria-selected={selected}
               aria-controls={`panel-${id}`}
-              onClick={() => select(id)}
+              onClick={() => selectTab(id)}
               className={`cursor-pointer rounded-lg border px-[16.8px] py-[5.6px] text-sm leading-[1.2] font-medium ${
                 selected
                   ? "border-accent text-accent hover:bg-accent-12 active:bg-accent-22"
