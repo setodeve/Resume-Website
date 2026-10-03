@@ -11,6 +11,6 @@ export const TAB_STORAGE_KEY = "tab";
 
 /**
  * 選択中のタブは <html data-tab> に持たせ、パネルの表示は CSS で切り替える。
- * このスクリプトを描画前に実行し、?tab= またはlocalStorage のタブを初回描画から表示する。
+ * 前回選んだタブは localStorage に保存し、このスクリプトを描画前に実行して初回描画から表示する。
  */
-export const tabInitScript = `try{var t=${JSON.stringify(TABS.map((tab) => tab.id))},q=new URLSearchParams(location.search).get("tab"),s=null;try{s=localStorage.getItem(${JSON.stringify(TAB_STORAGE_KEY)})}catch(e){}var v=t.indexOf(q)>=0?q:t.indexOf(s)>=0?s:null;if(v)document.documentElement.dataset.tab=v}catch(e){}`;
+export const tabInitScript = `try{var v=localStorage.getItem(${JSON.stringify(TAB_STORAGE_KEY)});if(${JSON.stringify(TABS.map((tab) => tab.id))}.indexOf(v)>=0)document.documentElement.dataset.tab=v}catch(e){}`;

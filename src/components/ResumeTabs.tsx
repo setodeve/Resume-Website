@@ -25,9 +25,6 @@ function selectTab(id: TabId) {
   try {
     localStorage.setItem(TAB_STORAGE_KEY, id);
   } catch {}
-  const url = new URL(window.location.href);
-  url.searchParams.set("tab", id);
-  window.history.replaceState(null, "", url);
   window.dispatchEvent(new Event(TAB_CHANGE_EVENT));
 }
 
