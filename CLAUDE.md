@@ -23,7 +23,7 @@ This is a **Next.js static resume website** that exports to static files (`outpu
 ### Key Technical Decisions
 
 - **Static Export**: Configured for GitHub Pages deployment (setodeve.github.io/Resume-Website/)
-- **Single page with tabs**: 記事 / Works / 経歴 on `/`. The selected tab is kept internally (`<html data-tab>` + localStorage, not in the URL); `/works` and `/cv` save the matching tab and redirect to `/`
+- **Single page with tabs**: 記事 / Works / 経歴 on `/` (`?tab=articles|works|cv`); `/works` and `/cv` redirect to the matching tab
 - **Build-time articles**: Latest Qiita / Zenn articles are fetched on the server at build time (the deploy workflow also rebuilds daily)
 - **Data-driven Content**: Projects and experiences loaded from JSON files in `/public`
 
