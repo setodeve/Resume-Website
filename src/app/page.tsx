@@ -1,29 +1,38 @@
-"use client";
-
+import ArticleList from "@/components/ArticleList";
+import CareerList from "@/components/CareerList";
 import Profile from "@/components/Profile";
-import SocialLinks from "@/components/SocialLinks";
-import Cat from "@/components/Cat";
+import ResumeTabs from "@/components/ResumeTabs";
 import ThemeToggle from "@/components/ThemeToggle";
+import WorkList from "@/components/WorkList";
+import { fetchLatestArticles } from "@/lib/articles";
+import { summarizeCareer, type Experience, type Project } from "@/lib/resume";
+import experiences from "../../public/experiences.json";
+import projects from "../../public/projects.json";
 
-export default function Home() {
+const column = "mx-auto max-w-[680px] px-[clamp(20px,5vw,32px)]";
+
+export default async function Home() {
+  // 静的エクスポートのため、記事はビルド時に取得する
+  const articles = await fetchLatestArticles();
+
   return (
-    <div className="font-sans min-h-screen text-gray-800 dark:text-gray-300">
-      <div className="flex flex-col min-h-screen">
-        <header className="absolute top-4 right-4">
-          <ThemeToggle />
-        </header>
-
-        <main className="flex-1 flex flex-col items-center justify-center px-4">
-          <div className="space-y-8">
-            <Profile />
-            <SocialLinks />
-          </div>
-        </main>
-
-        <footer className="py-8 flex justify-center">
-          <Cat />
-        </footer>
+    <>
+      <div className={`${column} flex justify-end pt-[18px]`}>
+        <ThemeToggle />
       </div>
-    </div>
+      <main className={`${column} pt-[clamp(24px,6vw,64px)] pb-12`}>
+        <Profile />
+        <ResumeTabs
+          panels={{
+            articles: <ArticleList articles={articles} />,
+            works: <WorkList projects={projects as Project[]} />,
+            cv: <CareerList careers={summarizeCareer(experiences as Experience[])} />,
+          }}
+        />
+      </main>
+      <footer className={`${column} pt-8 pb-12 text-[13px] text-text-55`}>
+        <span>© setodeve</span>
+      </footer>
+    </>
   );
 }
