@@ -1,16 +1,27 @@
 "use client";
 
-import { useEffect } from "react";
-import nextConfig from "../../next.config";
-import type { TabId } from "./ResumeTabs";
-
-const BASE_PATH = nextConfig.basePath || "";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import type { TabId } from "@/lib/tabs";
 
 /** 旧ページ（/works, /cv）から 1 ページ構成のタブへ移動する */
 export default function RedirectToTab({ tab }: { tab: TabId }) {
-  useEffect(() => {
-    window.location.replace(`${BASE_PATH}/?tab=${tab}`);
-  }, [tab]);
+  // Link が basePath 付きの href を出力するので、それをそのまま移動先に使う
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
-  return null;
+  useEffect(() => {
+    if (linkRef.current) window.location.replace(linkRef.current.href);
+  }, []);
+
+  // JS が動かない環境向けに、移動先へのリンクも表示しておく
+  return (
+    <main className="mx-auto max-w-[680px] px-[clamp(20px,5vw,32px)] pt-16 text-text-64">
+      <p>
+        このページは移動しました。
+        <Link ref={linkRef} href={`/?tab=${tab}`} className="text-accent underline underline-offset-4">
+          新しいページを開く
+        </Link>
+      </p>
+    </main>
+  );
 }

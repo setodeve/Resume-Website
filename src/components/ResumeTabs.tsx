@@ -1,45 +1,29 @@
 "use client";
 
-import { useSyncExternalStore, type ReactNode } from "react";
+import { useRef, useSyncExternalStore, type KeyboardEvent, type ReactNode } from "react";
+import { DEFAULT_TAB, TAB_STORAGE_KEY, TABS, type TabId } from "@/lib/tabs";
 
-export const TABS = [
-  { id: "articles", label: "記事" },
-  { id: "works", label: "Works" },
-  { id: "cv", label: "経歴" },
-] as const;
-
-export type TabId = (typeof TABS)[number]["id"];
-
-const STORAGE_KEY = "tab";
 const TAB_CHANGE_EVENT = "tabchange";
 
-function isTabId(value: string | null): value is TabId {
+function isTabId(value: string | undefined): value is TabId {
   return TABS.some((tab) => tab.id === value);
 }
 
-/** URL クエリ（?tab=）を優先し、なければ前回選んだタブを復元する */
+// <html data-tab> が正。初期値は layout.tsx のスクリプトが描画前に設定する
 function readTab(): TabId {
-  const fromQuery = new URLSearchParams(window.location.search).get("tab");
-  if (isTabId(fromQuery)) return fromQuery;
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (isTabId(saved)) return saved;
-  } catch {}
-  return "articles";
+  const value = document.documentElement.dataset.tab;
+  return isTabId(value) ? value : DEFAULT_TAB;
 }
 
 function subscribe(onChange: () => void) {
   window.addEventListener(TAB_CHANGE_EVENT, onChange);
-  window.addEventListener("popstate", onChange);
-  return () => {
-    window.removeEventListener(TAB_CHANGE_EVENT, onChange);
-    window.removeEventListener("popstate", onChange);
-  };
+  return () => window.removeEventListener(TAB_CHANGE_EVENT, onChange);
 }
 
 function selectTab(id: TabId) {
+  document.documentElement.dataset.tab = id;
   try {
-    localStorage.setItem(STORAGE_KEY, id);
+    localStorage.setItem(TAB_STORAGE_KEY, id);
   } catch {}
   const url = new URL(window.location.href);
   url.searchParams.set("tab", id);
@@ -48,7 +32,24 @@ function selectTab(id: TabId) {
 }
 
 export default function ResumeTabs({ panels }: { panels: Record<TabId, ReactNode> }) {
-  const current = useSyncExternalStore<TabId>(subscribe, readTab, () => "articles");
+  const current = useSyncExternalStore<TabId>(subscribe, readTab, () => DEFAULT_TAB);
+  const tabRefs = useRef<Partial<Record<TabId, HTMLButtonElement | null>>>({});
+
+  // WAI-ARIA Tabs パターン: フォーカス中のタブから ←/→ で隣、Home/End で端のタブへ移動して選択する
+  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    const index = TABS.findIndex((tab) => tab.id === event.currentTarget.dataset.tabId);
+    const next = {
+      ArrowRight: (index + 1) % TABS.length,
+      ArrowLeft: (index - 1 + TABS.length) % TABS.length,
+      Home: 0,
+      End: TABS.length - 1,
+    }[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    const id = TABS[next].id;
+    selectTab(id);
+    tabRefs.current[id]?.focus();
+  };
 
   return (
     <>
@@ -58,17 +59,19 @@ export default function ResumeTabs({ panels }: { panels: Record<TabId, ReactNode
           return (
             <button
               key={id}
+              ref={(el) => {
+                tabRefs.current[id] = el;
+              }}
               type="button"
               role="tab"
               id={`tab-${id}`}
+              data-tab-id={id}
               aria-selected={selected}
               aria-controls={`panel-${id}`}
+              tabIndex={selected ? 0 : -1}
               onClick={() => selectTab(id)}
-              className={`cursor-pointer rounded-lg border px-[16.8px] py-[5.6px] text-sm leading-[1.2] font-medium ${
-                selected
-                  ? "border-accent text-accent hover:bg-accent-12 active:bg-accent-22"
-                  : "border-divider text-text hover:bg-text-7 active:bg-text-14"
-              }`}
+              onKeyDown={handleKeyDown}
+              className="resume-tab cursor-pointer rounded-lg border px-[16.8px] py-[5.6px] text-sm leading-[1.2] font-medium"
             >
               {label}
             </button>
@@ -80,8 +83,10 @@ export default function ResumeTabs({ panels }: { panels: Record<TabId, ReactNode
           key={id}
           role="tabpanel"
           id={`panel-${id}`}
+          data-tab-id={id}
           aria-labelledby={`tab-${id}`}
-          hidden={id !== current}
+          tabIndex={0}
+          className="resume-tabpanel"
         >
           {panels[id]}
         </div>

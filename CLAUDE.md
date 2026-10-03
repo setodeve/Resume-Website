@@ -40,14 +40,15 @@ src/
 │   ├── ThemeProvider.tsx   # Light/dark theme state (localStorage)
 │   ├── ThemeToggle.tsx     # Theme toggle button
 │   ├── Profile.tsx         # Avatar, name, social links
-│   ├── ResumeTabs.tsx      # Tab list and panels (client)
+│   ├── ResumeTabs.tsx      # Tab list and panels (client, keyboard navigation)
 │   ├── ArticleList.tsx     # 記事 tab
 │   ├── WorkList.tsx        # Works tab
 │   ├── CareerList.tsx      # 経歴 tab (company-level summary)
 │   └── RedirectToTab.tsx   # Client redirect for legacy URLs
 └── lib/
     ├── articles.ts         # Qiita / Zenn fetching, sorting, date formatting
-    └── resume.ts           # Project / experience types and career summary
+    ├── resume.ts           # Project / experience types and career summary
+    └── tabs.ts             # Tab definitions and pre-paint tab init script
 ```
 
 ### Data Sources
@@ -72,7 +73,7 @@ src/
 ### Testing
 
 - **Vitest** for unit testing
-- **@testing-library/react** for component testing
+- Unit tests live next to the code (`src/lib/*.test.ts`); config in `vitest.config.mts`
 - **jsdom** environment for DOM testing
 
 ### Styling

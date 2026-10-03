@@ -22,20 +22,25 @@ interface ZennArticle {
   published_at: string;
 }
 
-async function fetchJson<T>(url: string): Promise<T | null> {
+async function fetchJson(url: string): Promise<unknown> {
   try {
     const res = await fetch(url, { signal: AbortSignal.timeout(10_000) });
-    if (!res.ok) return null;
-    return (await res.json()) as T;
+    if (!res.ok) {
+      console.error(`Failed to fetch ${url}: HTTP ${res.status}`);
+      return null;
+    }
+    return await res.json();
   } catch (error) {
     console.error(`Failed to fetch ${url}:`, error);
     return null;
   }
 }
 
-export async function fetchQiitaArticles(): Promise<Article[]> {
-  const items = await fetchJson<QiitaItem[]>(QIITA_URL);
-  return (items ?? []).map((item) => ({
+/** 取得に失敗した場合は null を返す（0 件の成功と区別する） */
+export async function fetchQiitaArticles(): Promise<Article[] | null> {
+  const items = await fetchJson(QIITA_URL);
+  if (!Array.isArray(items)) return null;
+  return (items as QiitaItem[]).map((item) => ({
     title: item.title,
     url: item.url,
     publishedAt: item.created_at,
@@ -43,9 +48,11 @@ export async function fetchQiitaArticles(): Promise<Article[]> {
   }));
 }
 
-export async function fetchZennArticles(): Promise<Article[]> {
-  const data = await fetchJson<{ articles?: ZennArticle[] }>(ZENN_URL);
-  return (data?.articles ?? []).map((article) => ({
+/** 取得に失敗した場合は null を返す（0 件の成功と区別する） */
+export async function fetchZennArticles(): Promise<Article[] | null> {
+  const data = (await fetchJson(ZENN_URL)) as { articles?: unknown } | null;
+  if (!Array.isArray(data?.articles)) return null;
+  return (data.articles as ZennArticle[]).map((article) => ({
     title: article.title,
     url: `https://zenn.dev${article.path}`,
     publishedAt: article.published_at,
@@ -70,5 +77,9 @@ export function formatArticleDate(value: string): string {
 
 export async function fetchLatestArticles(limit = 5): Promise<Article[]> {
   const [qiita, zenn] = await Promise.all([fetchQiitaArticles(), fetchZennArticles()]);
-  return latestArticles([...qiita, ...zenn], limit);
+  // 定期ビルドで両方とも取得できなければビルドを失敗させ、前回デプロイした記事一覧を残す
+  if (qiita === null && zenn === null && process.env.GITHUB_EVENT_NAME === "schedule") {
+    throw new Error("Failed to fetch articles from both Qiita and Zenn");
+  }
+  return latestArticles([...(qiita ?? []), ...(zenn ?? [])], limit);
 }

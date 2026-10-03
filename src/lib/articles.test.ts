@@ -1,5 +1,10 @@
-import { describe, expect, it } from "vitest";
-import { formatArticleDate, latestArticles, type Article } from "./articles";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import {
+  fetchLatestArticles,
+  formatArticleDate,
+  latestArticles,
+  type Article,
+} from "./articles";
 
 const article = (title: string, publishedAt: string, source: Article["source"] = "Qiita"): Article => ({
   title,
@@ -37,5 +42,51 @@ describe("formatArticleDate", () => {
 
   it("不正な日付は空文字にする", () => {
     expect(formatArticleDate("invalid")).toBe("");
+  });
+});
+
+describe("fetchLatestArticles", () => {
+  const respond = (byHost: Record<string, () => Response>) =>
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => byHost[new URL(url).host]()),
+    );
+  const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.unstubAllEnvs();
+    vi.restoreAllMocks();
+  });
+
+  it("Qiita と Zenn の記事をマージする", async () => {
+    respond({
+      "qiita.com": () =>
+        json([{ title: "q", url: "https://qiita.com/x", created_at: "2025-01-01T09:00:00+09:00" }]),
+      "zenn.dev": () =>
+        json({ articles: [{ title: "z", path: "/poppok/articles/a", published_at: "2025-01-02T09:00:00+09:00" }] }),
+    });
+    const result = await fetchLatestArticles();
+    expect(result.map((a) => [a.title, a.url])).toEqual([
+      ["z", "https://zenn.dev/poppok/articles/a"],
+      ["q", "https://qiita.com/x"],
+    ]);
+  });
+
+  it("片方が失敗・想定外の形式でも、取得できた方だけを返す", async () => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    respond({
+      "qiita.com": () => json({ message: "Rate limit exceeded" }, 403),
+      "zenn.dev": () => json({ unexpected: true }),
+    });
+    expect(await fetchLatestArticles()).toEqual([]);
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining("HTTP 403"));
+  });
+
+  it("定期ビルドで両方とも失敗したらエラーにする", async () => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    vi.stubEnv("GITHUB_EVENT_NAME", "schedule");
+    respond({ "qiita.com": () => json({}, 500), "zenn.dev": () => json({}, 500) });
+    await expect(fetchLatestArticles()).rejects.toThrow("Failed to fetch articles");
   });
 });
