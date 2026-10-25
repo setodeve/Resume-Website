@@ -5,5 +5,11 @@ onlyBuiltDependencies:
   - sharp
   - unrs-resolver
 
-# サプライチェーン攻撃対策: 公開から 1 日（分単位）経っていないバージョンは解決しない
-minimumReleaseAge: 1440
+# サプライチェーン攻撃対策: 公開から 7 日（分単位）経っていないバージョンは解決しない
+minimumReleaseAge: 10080
+# 以前のバージョンにあった provenance が消えたバージョンは解決しない
+trustPolicy: no-downgrade
+# 公開から 30 日以上経った版は上のチェック対象外（古いバックポート版の誤検知を避ける）
+trustPolicyIgnoreAfter: 43200
+# 推移的依存が git や tarball の URL を指していたら解決しない
+blockExoticSubdeps: true
