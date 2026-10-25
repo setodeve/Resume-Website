@@ -5,11 +5,11 @@ onlyBuiltDependencies:
   - sharp
   - unrs-resolver
 
-# Supply chain: wait 7 days before installing newly published versions
+# サプライチェーン攻撃対策: 公開から 7 日（分単位）経っていないバージョンは解決しない
 minimumReleaseAge: 10080
-# Fail if a package version drops provenance compared to earlier releases
+# 以前のバージョンにあった provenance が消えたバージョンは解決しない
 trustPolicy: no-downgrade
-# Skip the trust check for versions published over 30 days ago (old backports trip it)
+# 公開から 30 日以上経った版は上のチェック対象外（古いバックポート版の誤検知を避ける）
 trustPolicyIgnoreAfter: 43200
-# Block transitive deps from git repos or tarball URLs
+# 推移的依存が git や tarball の URL を指していたら解決しない
 blockExoticSubdeps: true

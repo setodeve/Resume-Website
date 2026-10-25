@@ -7,7 +7,6 @@
   --surface: #e9ebf7;
   --text: #292b31;
   --accent: #5d5294;
-  --accent-strong: #423a6a;
   --divider: color-mix(in srgb, #292b31 16%, transparent);
   --shadow-sm: 0 0 0 1px #cfd3e5;
   --glow: color-mix(in srgb, #e7e5fe 80%, transparent);
@@ -18,7 +17,6 @@
   --surface: #232532;
   --text: #e9e9ed;
   --accent: #9184d9;
-  --accent-strong: #b5abfc;
   --divider: color-mix(in srgb, #e9e9ed 16%, transparent);
   --shadow-sm: 0 0 0 1px #3f424d;
   --glow: color-mix(in srgb, #2b2741 75%, transparent);
@@ -52,6 +50,44 @@
       transparent
     )
     no-repeat bottom / 100% 1px;
+}
+
+/*
+ * タブの選択状態は <html data-tab> から CSS で描画する。
+ * 描画前のスクリプトが data-tab を設定するので、?tab= で開いても初回描画から正しいタブが出る。
+ * data-tab がないときは記事タブ。
+ */
+.resume-tab {
+  border-color: var(--divider);
+  color: var(--text);
+}
+.resume-tab:hover {
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+}
+.resume-tab:active {
+  background: color-mix(in srgb, var(--text) 14%, transparent);
+}
+.resume-tabpanel {
+  display: none;
+}
+
+:root:not([data-tab]) [data-tab-id='articles'],
+:root[data-tab='articles'] [data-tab-id='articles'],
+:root[data-tab='works'] [data-tab-id='works'],
+:root[data-tab='cv'] [data-tab-id='cv'] {
+  &.resume-tab {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  &.resume-tab:hover {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+  &.resume-tab:active {
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+  &.resume-tabpanel {
+    display: block;
+  }
 }
 
 body {
