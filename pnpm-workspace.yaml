@@ -4,3 +4,12 @@ onlyBuiltDependencies:
   - lefthook
   - sharp
   - unrs-resolver
+
+# Supply chain: wait 7 days before installing newly published versions
+minimumReleaseAge: 10080
+# Fail if a package version drops provenance compared to earlier releases
+trustPolicy: no-downgrade
+# Skip the trust check for versions published over 30 days ago (old backports trip it)
+trustPolicyIgnoreAfter: 43200
+# Block transitive deps from git repos or tarball URLs
+blockExoticSubdeps: true
